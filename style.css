@@ -1,0 +1,467 @@
+/* Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Canva Sans", Arial, Helvetica, sans-serif;
+}
+
+/* Keep background and animation styles unchanged */
+.wrapper {
+    position: relative;
+}
+
+svg {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.scrollElement {
+    position: absolute;
+    height: 6000px;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+/* Content Styles - Ensure visibility over background */
+section {
+    position: absolute;
+    z-index: 20; /* Ensure sections are above the background */
+    padding: 50px 20px;
+    background: transparent !important;
+    width: 100%;
+}
+
+/* Hero Section - Fullscreen and Centered with Better Contrast */
+#hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay for better text visibility */
+    z-index: 50;
+}
+
+/* Hero Text - Adjusted for Visibility */
+#hero h1 {
+    font-size: 6rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* Stronger shadow for readability */
+}
+
+#hero p {
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #ffffff; /* Light pinkish-purple for better contrast */
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* Stronger shadow for readability */
+}
+
+/* Animation on load */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#hero h1, #hero p {
+    animation: fadeIn 1s ease-in-out;
+}
+/* About Me Section - More Spread Out with Longer Line Length */
+#about {
+    position: absolute;
+    top: 100vh; /* Position after Hero */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; /* Increased width for longer lines */
+    max-width: 1200px; /* More space for content */
+    padding: 80px; /* Increased padding for better spacing */
+    background: rgba(255, 255, 255, 0.2); /* Subtle transparent background */
+    border-radius: 12px;
+    text-align: center;
+    z-index: 50;
+}
+
+/* About Me Heading */
+#about h2 {
+    font-size: 3.5rem; /* Slightly bigger for more impact */
+    font-weight: bold;
+    color: #fff; /* White text for contrast */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    margin-bottom: 30px; /* More space below heading */
+}
+
+/* About Me Paragraphs */
+#about p {
+    font-size: 1.4rem; /* Bigger text for readability */
+    line-height: 2; /* Increased line height for more spacing */
+    color: #000000; /* Light pastel purple for readability */
+    margin-bottom: 25px; /* More spacing between paragraphs */
+    max-width: 1100px; /* Increased max-width for longer line length */
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #about {
+        width: 95%;
+        padding: 50px; /* Slightly less padding for smaller screens */
+    }
+
+    #about h2 {
+        font-size: 2.8rem;
+    }
+
+    #about p {
+        font-size: 1.2rem;
+        max-width: 95%; /* Allow text to stretch more on smaller screens */
+    }
+}
+
+
+/* Projects Section - Clean and Structured */
+#projects {
+    position: absolute;
+    top: 200vh; /* Position after About Me */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    max-width: 1200px;
+    padding: 80px;
+    background: rgba(255, 255, 255, 0.2); /* Subtle transparency */
+    border-radius: 12px;
+    text-align: left;
+    z-index: 50;
+}
+
+/* Projects Section Heading */
+#projects h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white; /* White text */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* Added shadow */
+    margin-bottom: 30px;
+    text-align: left;
+}
+/* Project Container */
+.project-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Individual Project Card */
+.project {
+    background: rgba(255, 255, 255, 0.8); /* Light background for contrast */
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%; /* Ensure three projects in a row */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 250px;
+}
+
+/* Hover Effect */
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Project Titles */
+.project h3 {
+    font-size: 1.5rem; /* Reduced size */
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+}
+
+/* Project Description */
+.project p {
+    font-size: 1.1rem; /* Reduced size */
+    line-height: 1.6;
+    color: black;
+    margin-bottom: 10px;
+}
+
+/* GitHub Link */
+.project a {
+    font-size: 1rem;
+    color: #007bff; /* Blue for visibility */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.project a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #projects {
+        width: 95%;
+        padding: 50px;
+    }
+
+    .project-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 90%;
+    }
+
+    .project h3 {
+        font-size: 1.3rem;
+    }
+
+    .project p {
+        font-size: 1rem;
+    }
+}
+
+
+/* Tech Stack Section - Positioned Correctly */
+#techstack {
+    position: absolute;
+    top: 300vh; /* Position after Projects */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    max-width: 1200px;
+    padding: 80px 20px;
+    text-align: left;
+    z-index: 50;
+}
+
+/* Tech Stack Heading */
+#techstack h2 {
+    font-size: 2.5rem; /* Reduced size for consistency */
+    font-weight: bold;
+    color: white; /* White text */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* Added shadow */
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* Tools Section - Positioned Correctly */
+#tools {
+    position: absolute;
+    top: 400vh; /* Position after Tech Stack */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    max-width: 1200px;
+    padding: 80px 20px;
+    text-align: left;
+    z-index: 50;
+}
+
+/* Tools Section Heading */
+#tools h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white; /* White text */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* Added shadow */
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* Certifications Section - Clean and Readable */
+#certifications {
+    position: absolute;
+    top: 500vh; /* Position after Tools */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    max-width: 1000px;
+    padding: 80px 20px;
+    text-align: left;
+    z-index: 50;
+}
+
+/* Certifications Section Heading */
+#certifications h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white; /* White text */
+    text-shadow: none;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* Certifications List */
+#certifications ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Individual Certification */
+#certifications li {
+    font-size: 1.3rem;
+    color: white; /* White text */
+    padding: 15px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect */
+#certifications li:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #certifications {
+        width: 95%;
+        padding: 50px;
+    }
+
+    #certifications li {
+        font-size: 1.2rem;
+    }
+}
+
+/* Contact Section - Simple & Readable */
+#contact {
+    position: absolute;
+    top: 600vh; /* Position after Certifications */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    max-width: 800px;
+    padding: 80px 20px;
+    text-align: left;
+    z-index: 50;
+}
+
+/* Contact Section Heading */
+#contact h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white; /* White text */
+    text-shadow: none;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* Contact Details */
+#contact p {
+    font-size: 1.3rem;
+    color: white; /* White text */
+    margin-bottom: 15px;
+}
+
+/* Contact Links */
+#contact a {
+    font-size: 1.3rem;
+    color: #007bff; /* Blue links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #contact {
+        width: 95%;
+        padding: 50px;
+    }
+
+    #contact p {
+        font-size: 1.2rem;
+    }
+
+    #contact a {
+        font-size: 1.2rem;
+    }
+}
+/* Typography */
+h1, h2, h3 {
+    color: black;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+p {
+    color: black;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Project Cards - Keep visible */
+.project, .blog-post {
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 400px;
+    border: none;
+    background: none;
+}
+
+/* Tech Cards - Ensure full visibility and easy movement */
+.tech-card {
+    border: 2px solid black; /* Added black border */
+    padding: 20px;
+    background: transparent !important;
+    text-align: center;
+    transition: 0.3s;
+    border-radius: 8px;
+    box-shadow: none;
+    z-index: 40;
+    position: relative;
+}
+
+.tech-card:hover {
+    transform: scale(1.05);
+    background: black; /* Black background on hover */
+    color: white; /* Ensure text turns white on hover */
+}
+
+.tech-card i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: white; /* Icons are now white */
+    opacity: 1;
+}
+
+.tech-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    opacity: 1;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Added text shadow for better visibility */
+}
+
+
+/* Hover Effect */
+.tech-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
