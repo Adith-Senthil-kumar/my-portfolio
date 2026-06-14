@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SmartHealthLink — Case Study | Adith Senthil Kumar</title>
+  <meta name="description" content="Case study: SmartHealthLink — a family-centric real-time health monitoring & alert system with an AI stacked-ensemble model for hereditary risk prediction (90.2% accuracy). Flutter, Firebase, Google Health Connect, Python.">
+  <meta name="theme-color" content="#0d0a1f">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="SmartHealthLink — Case Study">
+  <meta property="og:description" content="Family-centric health monitoring with AI hereditary-risk prediction (90.2% accuracy). Flutter · Firebase · Health Connect · Python.">
+  <meta property="og:url" content="https://adith-senthil-kumar.github.io/my-portfolio/smarthealthlink.html">
+  <meta property="og:image" content="https://adith-senthil-kumar.github.io/my-portfolio/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://adith-senthil-kumar.github.io/my-portfolio/og.png">
+  <link rel="canonical" href="https://adith-senthil-kumar.github.io/my-portfolio/smarthealthlink.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0a1f'/><circle cx='16' cy='17' r='8' fill='%23f5c54e'/><rect y='22' width='32' height='10' fill='%230d0a1f'/><rect x='4' y='22' width='24' height='2' fill='%23f0795f'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="case">
+  <a class="skip-link" href="#case-main">Skip to content</a>
+
+  <header class="case-nav">
+    <div class="case-nav__inner">
+      <a class="case-nav__back" href="index.html#projects">&larr; Back to portfolio</a>
+      <span class="pub__badge">IEEE Xplore</span>
+    </div>
+  </header>
+
+  <main id="case-main">
+    <!-- Hero -->
+    <section class="section case-hero">
+      <p class="eyebrow">Case study &middot; Published research</p>
+      <h1 class="case-hero__title">SmartHealthLink</h1>
+      <p class="case-hero__sub">A family-centric, real-time health monitoring &amp; alert system with AI-assisted hereditary &amp; preventive insights.</p>
+      <ul class="case-meta">
+        <li>IEEE I3CTCON 2026</li>
+        <li>Lonavala, India &middot; Mar 2026</li>
+        <li>Adith Senthil Kumar &middot; Brendan Ryan Devasagay A</li>
+      </ul>
+      <div class="case-hero__actions">
+        <a class="btn btn--primary" href="https://ieeexplore.ieee.org/document/11507141" target="_blank" rel="noopener">Read on IEEE &rarr;</a>
+        <a class="btn btn--ghost" href="papers/smarthealthlink.pdf" target="_blank" rel="noopener">Download PDF</a>
+      </div>
+      <ul class="tags case-hero__tags">
+        <li>Flutter</li><li>Dart</li><li>Firebase</li><li>Google Health Connect</li><li>Python</li><li>Scikit-learn</li>
+      </ul>
+    </section>
+
+    <!-- Overview / stat strip -->
+    <section class="section case-block">
+      <div class="metrics">
+        <div class="metric glass"><span class="metric__num">90.2%</span><span class="metric__label">Model accuracy</span></div>
+        <div class="metric glass"><span class="metric__num">0.924</span><span class="metric__label">AUC-ROC</span></div>
+        <div class="metric glass"><span class="metric__num">12.4 ms</span><span class="metric__label">Inference / sample</span></div>
+        <div class="metric glass"><span class="metric__num">&lt; 2 s</span><span class="metric__label">Sync @ 200 req/min</span></div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section case-block">
+      <h2 class="section__title">The problem</h2>
+      <p class="case-lead">Most wearable health platforms are built around a single person. They track your vitals, but they don't see your family — and chronic illness rarely respects that boundary.</p>
+      <ul class="case-list">
+        <li>Monitoring is <strong>individual-centric</strong> — no shared ecosystem for parents, children, and dependents.</li>
+        <li>Hereditary risk for diabetes, hypertension, and cardiovascular disease is <strong>ignored</strong>, so prevention starts too late.</li>
+        <li>There's <strong>no automated alerting</strong> to caregivers when a vital crosses a dangerous threshold, delaying emergency response.</li>
+      </ul>
+    </section>
+
+    <!-- Solution -->
+    <section class="section case-block">
+      <h2 class="section__title">What we built</h2>
+      <p class="case-lead">SmartHealthLink turns individual tracking into a secure <strong>family health ecosystem</strong>, layered with AI risk prediction and real-time alerts.</p>
+      <div class="feature-grid">
+        <div class="feature glass"><h3>Real-time vitals</h3><p>Heart rate, SpO&#8322;, sleep, and activity streamed from wearables via Google Health Connect into a live dashboard.</p></div>
+        <div class="feature glass"><h3>Family health view</h3><p>Consent-based multi-profile monitoring of parents, children, and dependents — with warnings when anyone trends abnormal.</p></div>
+        <div class="feature glass"><h3>AI hereditary risk</h3><p>A stacked-ensemble model predicts calibrated cardiovascular &amp; metabolic risk from vitals + family history.</p></div>
+        <div class="feature glass"><h3>Automated alerts</h3><p>Firebase Cloud Messaging pushes instant alerts to caregivers the moment a threshold is breached.</p></div>
+        <div class="feature glass"><h3>ABHA integration</h3><p>Pulls historical records, prescriptions, and lab reports from India's ABHA digital health repository.</p></div>
+        <div class="feature glass"><h3>Rehab assistant</h3><p>Interactive questionnaires track recovery progress and feed back into the analysis loop.</p></div>
+      </div>
+    </section>
+
+    <!-- Architecture -->
+    <section class="section case-block">
+      <h2 class="section__title">Architecture</h2>
+      <p class="case-lead">A hybrid cloud pipeline: wearables are the data source, a Flutter app is the client, and Firebase + a Python ML service do the heavy lifting.</p>
+      <div class="flow" role="img" aria-label="Pipeline: wearable data collection, family integration, ABHA retrieval, health monitoring with alerts, stacked-ensemble risk prediction, dashboard, secure storage, feedback loop.">
+        <span class="flow__step">Wearable data</span>
+        <span class="flow__step">Family integration</span>
+        <span class="flow__step">ABHA records</span>
+        <span class="flow__step flow__step--alert">Monitoring &amp; alerts</span>
+        <span class="flow__step flow__step--ai">Stacked-ensemble risk</span>
+        <span class="flow__step">Dashboard</span>
+        <span class="flow__step">Secure storage</span>
+        <span class="flow__step">Feedback loop</span>
+      </div>
+      <div class="layer-grid">
+        <div class="layer glass"><span class="layer__k">Client</span><span class="layer__v">Flutter + Dart — one codebase for Android &amp; iOS, graphical dashboards and colour-coded alerts.</span></div>
+        <div class="layer glass"><span class="layer__k">Data bridge</span><span class="layer__v">Google Health Connect API — normalises heart rate, SpO&#8322;, steps &amp; sleep across wearable brands.</span></div>
+        <div class="layer glass"><span class="layer__k">Backend</span><span class="layer__v">Firebase — Auth (email + Google), Firestore, Cloud Functions for threshold alerts, Storage, and FCM.</span></div>
+        <div class="layer glass"><span class="layer__k">Security</span><span class="layer__v">HTTPS + Firebase rules + role-based access (RBAC); sensitive docs locked to authorised family members.</span></div>
+      </div>
+    </section>
+
+    <!-- ML -->
+    <section class="section case-block">
+      <h2 class="section__title">The model</h2>
+      <p class="case-lead">Hereditary risk is a noisy, imbalanced problem — a single classifier overfits. We used a <strong>stacked ensemble</strong> to trade variance for calibrated reliability.</p>
+      <ul class="case-list">
+        <li><strong>Base learners:</strong> multiple gradient-boosted decision trees capture non-linear interactions in the health data.</li>
+        <li><strong>Meta-learner:</strong> a logistic-regression classifier combines them, with a probability-calibration layer for trustworthy risk scores.</li>
+        <li><strong>Data:</strong> 1,500 samples (heart rate, SpO&#8322;, sleep, activity, age, BMI, family-disease history), 80/20 split, weighted loss to fight class imbalance.</li>
+        <li><strong>Result:</strong> 90.2% accuracy / 0.924 AUC-ROC at 12.4 ms inference — beating SVM (82.5%) and a standalone GBDT (88.9%).</li>
+      </ul>
+    </section>
+
+    <!-- Outcome -->
+    <section class="section case-block">
+      <h2 class="section__title">Outcome</h2>
+      <p class="case-lead">An end-to-end system that merges wearable data, family health, and AI analytics in real time — and was peer-reviewed and published at IEEE I3CTCON 2026.</p>
+      <div class="case-hero__actions">
+        <a class="btn btn--primary" href="https://ieeexplore.ieee.org/document/11507141" target="_blank" rel="noopener">Read the paper &rarr;</a>
+        <a class="btn btn--ghost" href="index.html#projects">Back to projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year">2026</span> Adith Senthil Kumar</p>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
