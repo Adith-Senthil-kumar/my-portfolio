@@ -38,6 +38,9 @@
   <!-- Favicon: a setting sun over the horizon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0a1f'/><circle cx='16' cy='17' r='8' fill='%23f5c54e'/><rect y='22' width='32' height='10' fill='%230d0a1f'/><rect x='4' y='22' width='24' height='2' fill='%23f0795f'/></svg>">
 
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -538,6 +541,20 @@
 
       <article class="card glass reveal">
         <div class="card__top">
+          <span class="card__icon"><img src="icons/python.svg" alt="Python"></span>
+          <span class="card__flag">Published</span>
+        </div>
+        <h3 class="card__title">Cyber Threat Intelligence System</h3>
+        <p class="card__desc">An automated CTI pipeline that crawls the open web and classifies threat severity in real time with a fine-tuned TinyBERT model (90.2% accuracy) &mdash; backed by a Flask dashboard and mail/SMS alerts.</p>
+        <ul class="tags"><li>Python</li><li>TinyBERT</li><li>NLP</li><li>MongoDB</li><li>Flask</li></ul>
+        <div class="card__links">
+          <a class="card__paper" href="cyberthreat.html">View case study &rarr;</a>
+          <a class="card__paper card__paper--muted" href="https://ieeexplore.ieee.org/document/11486242" target="_blank" rel="noopener">IEEE paper</a>
+        </div>
+      </article>
+
+      <article class="card glass reveal">
+        <div class="card__top">
           <span class="card__icon"><img src="icons/flutter.svg" alt="Flutter"></span>
         </div>
         <h3 class="card__title">Finmatrix &mdash; Client Management App</h3>
@@ -602,10 +619,14 @@
         <h3 class="pub__title">Cyber Threat Intelligence System</h3>
         <p class="pub__venue">Contemporary Computing Innovations Conference (CCIC 2026) &middot; Mohan Babu University, Tirupati, India</p>
         <p class="pub__authors"><strong>Adith Senthil Kumar</strong> &middot; Brendan Ryan Devasagay A</p>
-        <p class="pub__abstract">A system for aggregating, correlating, and operationalising cyber threat intelligence to support faster detection of and response to emerging threats.</p>
+        <p class="pub__abstract">A scalable system that crawls open web sources &mdash; forums, news, social platforms &mdash; and classifies threat severity in real time with a fine-tuned TinyBERT model (90.2% accuracy), surfacing prioritised, actionable alerts.</p>
         <div class="pub__foot">
           <span class="pub__doi">DOI: 10.1109/CCIC68129.2026.11486242</span>
-          <a class="pub__link" href="https://ieeexplore.ieee.org/document/11486242" target="_blank" rel="noopener">Read on IEEE &rarr;</a>
+          <span class="pub__links">
+            <a class="pub__link" href="cyberthreat.html">Case study</a>
+            <a class="pub__link" href="papers/cyber.pdf" target="_blank" rel="noopener">PDF</a>
+            <a class="pub__link" href="https://ieeexplore.ieee.org/document/11486242" target="_blank" rel="noopener">IEEE &rarr;</a>
+          </span>
         </div>
       </article>
     </div>

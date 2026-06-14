@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cyber Threat Intelligence System — Case Study | Adith Senthil Kumar</title>
+  <meta name="description" content="Case study: an automated Cyber Threat Intelligence system that crawls the open web and classifies threat severity with a fine-tuned TinyBERT model (90.2% accuracy). Python, NLP, MongoDB, Flask.">
+  <meta name="theme-color" content="#0d0a1f">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Cyber Threat Intelligence System — Case Study">
+  <meta property="og:description" content="Automated CTI: web crawling + NLP severity classification with TinyBERT (90.2% accuracy). Python · NLP · MongoDB · Flask.">
+  <meta property="og:url" content="https://adith-senthil-kumar.github.io/my-portfolio/cyberthreat.html">
+  <meta property="og:image" content="https://adith-senthil-kumar.github.io/my-portfolio/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://adith-senthil-kumar.github.io/my-portfolio/og.png">
+  <link rel="canonical" href="https://adith-senthil-kumar.github.io/my-portfolio/cyberthreat.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0a1f'/><circle cx='16' cy='17' r='8' fill='%23f5c54e'/><rect y='22' width='32' height='10' fill='%230d0a1f'/><rect x='4' y='22' width='24' height='2' fill='%23f0795f'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="case">
+  <a class="skip-link" href="#case-main">Skip to content</a>
+
+  <header class="case-nav">
+    <div class="case-nav__inner">
+      <a class="case-nav__back" href="index.html#projects">&larr; Back to portfolio</a>
+      <span class="pub__badge">IEEE Xplore</span>
+    </div>
+  </header>
+
+  <main id="case-main">
+    <!-- Hero -->
+    <section class="section case-hero">
+      <p class="eyebrow">Case study &middot; Published research</p>
+      <h1 class="case-hero__title">Cyber Threat Intelligence System</h1>
+      <p class="case-hero__sub">An automated pipeline that crawls the open web and classifies cyber-threat severity in real time with a fine-tuned TinyBERT model.</p>
+      <ul class="case-meta">
+        <li>CCIC 2026</li>
+        <li>Mohan Babu University, Tirupati &middot; Feb 2026</li>
+        <li>Adith Senthil Kumar &middot; Brendan Ryan Devasagay A</li>
+      </ul>
+      <div class="case-hero__actions">
+        <a class="btn btn--primary" href="https://ieeexplore.ieee.org/document/11486242" target="_blank" rel="noopener">Read on IEEE &rarr;</a>
+        <a class="btn btn--ghost" href="papers/cyber.pdf" target="_blank" rel="noopener">Download PDF</a>
+      </div>
+      <ul class="tags case-hero__tags">
+        <li>Python</li><li>TinyBERT</li><li>NLP</li><li>Web Crawler</li><li>MongoDB</li><li>Flask</li>
+      </ul>
+    </section>
+
+    <!-- Stat strip -->
+    <section class="section case-block">
+      <div class="metrics">
+        <div class="metric glass"><span class="metric__num">90.2%</span><span class="metric__label">Classifier accuracy</span></div>
+        <div class="metric glass"><span class="metric__num">0.924</span><span class="metric__label">AUC-ROC</span></div>
+        <div class="metric glass"><span class="metric__num">18.4 ms</span><span class="metric__label">Inference / sample</span></div>
+        <div class="metric glass"><span class="metric__num">90.4%</span><span class="metric__label">Crawl success rate</span></div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section case-block">
+      <h2 class="section__title">The problem</h2>
+      <p class="case-lead">Threats are planned in the open &mdash; on forums, marketplaces, and social platforms &mdash; but traditional security is reactive and reads none of it.</p>
+      <ul class="case-list">
+        <li>Threat intelligence is <strong>fragmented</strong> across many platforms, making it hard to gather and correlate.</li>
+        <li>Conventional security devices give <strong>no real-time monitoring</strong> of unstructured open-web chatter.</li>
+        <li>Threats <strong>evolve faster than manual analysis</strong> can keep up, given the volume and noise of web data.</li>
+      </ul>
+    </section>
+
+    <!-- Solution -->
+    <section class="section case-block">
+      <h2 class="section__title">What we built</h2>
+      <p class="case-lead">A scalable CTI system that continuously watches open web sources and turns raw chatter into <strong>prioritised, actionable threat intelligence</strong>.</p>
+      <div class="feature-grid">
+        <div class="feature glass"><h3>Automated crawling</h3><p>A custom crawler periodically scans forums, marketplaces, blogs, and news portals, fetching and storing raw HTML.</p></div>
+        <div class="feature glass"><h3>NLP preprocessing</h3><p>BeautifulSoup strips scripts, tags, and ads; regex normalises the text into a clean corpus for classification.</p></div>
+        <div class="feature glass"><h3>Severity classification</h3><p>A fine-tuned TinyBERT model sorts threats into four levels &mdash; None, Low, Medium, High &mdash; for prioritised response.</p></div>
+        <div class="feature glass"><h3>Keyword pre-filter</h3><p>A rule-based stage tags category terms (hacking, malware, fraud, weapons) to cut model load before inference.</p></div>
+        <div class="feature glass"><h3>Dashboard &amp; analytics</h3><p>A Flask dashboard visualises results with charts, filters, and severity highlighting for live monitoring.</p></div>
+        <div class="feature glass"><h3>Automated alerts</h3><p>When severity crosses <em>High</em>, the system triggers instant mail / SMS alerts so teams can react fast.</p></div>
+      </div>
+    </section>
+
+    <!-- Architecture -->
+    <section class="section case-block">
+      <h2 class="section__title">Architecture</h2>
+      <p class="case-lead">A multi-stage pipeline from raw web pages to actionable intelligence, deployed on cloud infrastructure for scale.</p>
+      <div class="flow" role="img" aria-label="Pipeline: web crawler, web scraper, preprocessing, keyword filter, TinyBERT classifier, MongoDB storage, Flask dashboard, alerts.">
+        <span class="flow__step">Web crawler</span>
+        <span class="flow__step">Scraper</span>
+        <span class="flow__step">Preprocessing</span>
+        <span class="flow__step">Keyword filter</span>
+        <span class="flow__step flow__step--ai">TinyBERT classifier</span>
+        <span class="flow__step">MongoDB</span>
+        <span class="flow__step">Flask dashboard</span>
+        <span class="flow__step flow__step--alert">Alerts</span>
+      </div>
+      <div class="layer-grid">
+        <div class="layer glass"><span class="layer__k">Ingestion</span><span class="layer__v">Custom Python crawler + scraper pulling surface-web content via HTTP at ~45 pages/min.</span></div>
+        <div class="layer glass"><span class="layer__k">NLP</span><span class="layer__v">BeautifulSoup cleaning, a rule-based keyword filter, and a fine-tuned TinyBERT transformer (max length 512).</span></div>
+        <div class="layer glass"><span class="layer__k">Storage</span><span class="layer__v">MongoDB holds structured records &mdash; URL, extracted text, category, severity, and timestamp.</span></div>
+        <div class="layer glass"><span class="layer__k">Delivery</span><span class="layer__v">A Flask dashboard for analytics, plus automated mail / SMS alerts on high-severity hits.</span></div>
+      </div>
+    </section>
+
+    <!-- Model -->
+    <section class="section case-block">
+      <h2 class="section__title">The model</h2>
+      <p class="case-lead">Threat text is short, noisy, and multi-class &mdash; a good fit for a small, fast transformer rather than a heavyweight LLM.</p>
+      <ul class="case-list">
+        <li><strong>TinyBERT</strong>, fine-tuned for four-level severity classification (None / Low / Medium / High) at 512-token inputs.</li>
+        <li>A <strong>rule-based keyword pre-filter</strong> drops irrelevant pages first, cutting inference load.</li>
+        <li><strong>Result:</strong> 90.2% accuracy / 0.924 AUC-ROC at 18.4 ms inference &mdash; beating Naive Bayes (80.3%), Logistic Regression (84.5%), Random Forest (85.2%), and LSTM (86.7%).</li>
+        <li>The crawler sustained <strong>90.4% success</strong> over 9,560 pages while removing 80.1% of noise.</li>
+      </ul>
+    </section>
+
+    <!-- Outcome -->
+    <section class="section case-block">
+      <h2 class="section__title">Outcome</h2>
+      <p class="case-lead">A robust, scalable, end-to-end threat-intelligence system that processes open-web content in near real time &mdash; peer-reviewed and published at CCIC 2026.</p>
+      <div class="case-hero__actions">
+        <a class="btn btn--primary" href="https://ieeexplore.ieee.org/document/11486242" target="_blank" rel="noopener">Read the paper &rarr;</a>
+        <a class="btn btn--ghost" href="index.html#projects">Back to projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year">2026</span> Adith Senthil Kumar</p>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
