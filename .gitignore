@@ -1,3 +1,6 @@
 .DS_Store
 .vscode/
 .claude/
+
+# Raw screenshot sources (kept locally; optimized WebP lives in screenshots/)
+busbuddy_images/

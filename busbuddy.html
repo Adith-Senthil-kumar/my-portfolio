@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BusBuddy — Case Study | Adith Senthil Kumar</title>
+  <meta name="description" content="Case study: BusBuddy — real-time school-bus tracking. One Flutter codebase and one login fan out into three role apps (admin, parent, driver) over a shared Firebase backend, with live GPS tracking and QR attendance. 204 passing tests.">
+  <meta name="theme-color" content="#0d0a1f">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="BusBuddy — Case Study">
+  <meta property="og:description" content="One login fans out into three Flutter role apps — admin, parent, driver — over a shared Firebase backend, unified by live GPS tracking and QR attendance.">
+  <meta property="og:url" content="https://adith-senthil-kumar.github.io/my-portfolio/busbuddy.html">
+  <meta property="og:image" content="https://adith-senthil-kumar.github.io/my-portfolio/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://adith-senthil-kumar.github.io/my-portfolio/og.png">
+  <link rel="canonical" href="https://adith-senthil-kumar.github.io/my-portfolio/busbuddy.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0a1f'/><circle cx='16' cy='17' r='8' fill='%23f5c54e'/><rect y='22' width='32' height='10' fill='%230d0a1f'/><rect x='4' y='22' width='24' height='2' fill='%23f0795f'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="case">
+  <a class="skip-link" href="#case-main">Skip to content</a>
+
+  <header class="case-nav">
+    <div class="case-nav__inner">
+      <a class="case-nav__back" href="index.html#projects">&larr; Back to portfolio</a>
+      <span class="pub__badge">Flutter app</span>
+    </div>
+  </header>
+
+  <main id="case-main">
+    <!-- Hero -->
+    <section class="section case-hero">
+      <img class="case-hero__icon" src="screenshots/busbuddy/app-icon.webp" alt="BusBuddy app icon" width="64" height="64">
+      <p class="eyebrow">Case study &middot; Personal project</p>
+      <h1 class="case-hero__title">BusBuddy</h1>
+      <p class="case-hero__sub">One login fans out into three role-specific apps &mdash; an admin fleet console, a parent live-tracker, and a driver companion &mdash; over one shared Firebase backend, unified by live GPS tracking and QR attendance.</p>
+      <ul class="case-meta">
+        <li>Solo project</li>
+        <li>Flutter &middot; Firebase</li>
+        <li>Android &middot; iOS &middot; Web &middot; Desktop</li>
+      </ul>
+      <div class="case-hero__actions">
+        <a class="btn btn--primary" href="#screenshots">View screenshots &darr;</a>
+        <a class="btn btn--ghost" href="index.html#projects">Back to projects</a>
+      </div>
+      <ul class="tags case-hero__tags">
+        <li>Flutter</li><li>Dart</li><li>BLoC</li><li>Firebase</li><li>Cloud Firestore</li><li>flutter_map</li><li>fl_chart</li>
+      </ul>
+    </section>
+
+    <!-- Overview / stat strip -->
+    <section class="section case-block">
+      <div class="metrics">
+        <div class="metric glass"><span class="metric__num">3</span><span class="metric__label">Role-based apps</span></div>
+        <div class="metric glass"><span class="metric__num">~39</span><span class="metric__label">Distinct screens</span></div>
+        <div class="metric glass"><span class="metric__num">204</span><span class="metric__label">Passing tests</span></div>
+        <div class="metric glass"><span class="metric__num">6</span><span class="metric__label">Firebase services</span></div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section case-block">
+      <h2 class="section__title">The problem</h2>
+      <p class="case-lead">Schools, drivers, and parents have no shared, real-time picture of where the school bus is or who&rsquo;s on board &mdash; so everyone works from a different, stale story.</p>
+      <ul class="case-list">
+        <li>Parents have <strong>no reliable way to know</strong> when the bus is actually arriving, turning every morning into guesswork.</li>
+        <li>Schools juggle buses, drivers, routes, and students across <strong>disconnected spreadsheets and phone calls</strong>.</li>
+        <li>Attendance on the bus is <strong>manual and error-prone</strong>, with no dependable record of who boarded.</li>
+      </ul>
+    </section>
+
+    <!-- Solution -->
+    <section class="section case-block">
+      <h2 class="section__title">What I built</h2>
+      <p class="case-lead">BusBuddy connects all three roles around <strong>one shared backend</strong> &mdash; live GPS, route progress, and attendance, each surfaced in a purpose-built app.</p>
+      <div class="feature-grid">
+        <div class="feature glass"><h3>Real-time GPS tracking</h3><p>Drivers broadcast location; parents and admins watch buses move on a live map (flutter_map / OpenStreetMap) with route polylines, stop markers, and last-updated staleness chips.</p></div>
+        <div class="feature glass"><h3>One login, three apps</h3><p>A single Firebase login reads your role and routes you to the Admin, Parent, or Driver app &mdash; three tailored experiences over one data layer.</p></div>
+        <div class="feature glass"><h3>Admin fleet console</h3><p>CRUD for buses, drivers, students, routes and contacts, plus bus&#8596;driver assignment, all from one dashboard.</p></div>
+        <div class="feature glass"><h3>QR attendance</h3><p>Drivers scan a QR code to mark students present, creating a dependable boarding record per trip.</p></div>
+        <div class="feature glass"><h3>Reports &amp; analytics</h3><p>Fleet occupancy, attendance rate, and per-route breakdowns rendered with fl_chart.</p></div>
+        <div class="feature glass"><h3>Light &amp; dark, everywhere</h3><p>A full light/dark theme system across all three apps, with push notifications via Firebase Messaging and OneSignal.</p></div>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="section case-block" id="screenshots">
+      <h2 class="section__title">Screenshots</h2>
+      <p class="case-lead">One login, three apps &mdash; here&rsquo;s how each role sees BusBuddy. Tap any screen to view it full size.</p>
+
+      <div class="shots">
+        <div class="shots__group">
+          <p class="shots__label">Admin &middot; Fleet console</p>
+          <div class="shots__grid">
+            <button class="shot" type="button" data-full="screenshots/busbuddy/admin-tracking.webp" data-caption="Admin &middot; Live fleet tracking" aria-label="Admin live fleet tracking — view full size">
+              <img src="screenshots/busbuddy/admin-tracking-thumb.webp" alt="BusBuddy admin live-tracking screen: a map with a bus marker above a list of buses showing driver, route and last-updated staleness chips" width="560" height="1219" loading="lazy" decoding="async">
+            </button>
+            <button class="shot" type="button" data-full="screenshots/busbuddy/admin-home.webp" data-caption="Admin &middot; Fleet dashboard" aria-label="Admin fleet dashboard — view full size">
+              <img src="screenshots/busbuddy/admin-home-thumb.webp" alt="BusBuddy admin home screen: metric cards for buses, assigned and drivers above a searchable bus list with occupancy chips" width="560" height="1219" loading="lazy" decoding="async">
+            </button>
+            <button class="shot" type="button" data-full="screenshots/busbuddy/admin-reports.webp" data-caption="Admin &middot; Reports &amp; analytics" aria-label="Admin reports and analytics — view full size">
+              <img src="screenshots/busbuddy/admin-reports-thumb.webp" alt="BusBuddy admin reports screen: occupancy and attendance analytics rendered as charts with fl_chart" width="560" height="1219" loading="lazy" decoding="async">
+            </button>
+            <button class="shot" type="button" data-full="screenshots/busbuddy/admin-buses.webp" data-caption="Admin &middot; Bus management" aria-label="Admin bus management — view full size">
+              <img src="screenshots/busbuddy/admin-buses-thumb.webp" alt="BusBuddy admin bus-management screen: a list of buses with management actions" width="560" height="1219" loading="lazy" decoding="async">
+            </button>
+          </div>
+        </div>
+
+        <div class="shots__group">
+          <p class="shots__label">Parent &middot; Live tracker</p>
+          <div class="shots__grid">
+            <button class="shot" type="button" data-full="screenshots/busbuddy/parent-home.webp" data-caption="Parent &middot; Live status" aria-label="Parent live status — view full size">
+              <img src="screenshots/busbuddy/parent-home-thumb.webp" alt="BusBuddy parent home screen: a mint status hero showing next stop and an ETA progress bar, the driver card, and the route stops" width="560" height="1219" loading="lazy" decoding="async">
+            </button>
+            <button class="shot" type="button" data-full="screenshots/busbuddy/parent-tracking.webp" data-caption="Parent &middot; Live location" aria-label="Parent live location — view full size">
+              <img src="screenshots/busbuddy/parent-tracking-thumb.webp" alt="BusBuddy parent live-location screen: the child's bus moving on a map in real time" width="560" height="1219" loading="lazy" decoding="async">
+            </button>
+            <button class="shot" type="button" data-full="screenshots/busbuddy/parent-bus.webp" data-caption="Parent &middot; Bus details" aria-label="Parent bus details — view full size">
+              <img src="screenshots/busbuddy/parent-bus-thumb.webp" alt="BusBuddy parent bus screen: bus, driver and route details" width="560" height="1219" loading="lazy" decoding="async">
+            </button>
+          </div>
+        </div>
+
+        <div class="shots__group">
+          <p class="shots__label">Driver &middot; Companion</p>
+          <div class="shots__grid">
+            <button class="shot" type="button" data-full="screenshots/busbuddy/driver-home.webp" data-caption="Driver &middot; Dashboard" aria-label="Driver dashboard — view full size">
+              <img src="screenshots/busbuddy/driver-home-thumb.webp" alt="BusBuddy driver home screen: a greeting, a pinned live map, a status hero, stat cards and a stops timeline" width="560" height="1219" loading="lazy" decoding="async">
+            </button>
+            <button class="shot" type="button" data-full="screenshots/busbuddy/driver-scan.webp" data-caption="Driver &middot; QR attendance" aria-label="Driver QR attendance scan — view full size">
+              <img src="screenshots/busbuddy/driver-scan-thumb.webp" alt="BusBuddy driver QR-scan screen for marking students present by scanning a code" width="560" height="1219" loading="lazy" decoding="async">
+            </button>
+            <button class="shot" type="button" data-full="screenshots/busbuddy/driver-attendance.webp" data-caption="Driver &middot; Attendance" aria-label="Driver attendance list — view full size">
+              <img src="screenshots/busbuddy/driver-attendance-thumb.webp" alt="BusBuddy driver attendance screen listing students and their boarding status" width="560" height="1219" loading="lazy" decoding="async">
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section case-block">
+      <h2 class="section__title">How it works</h2>
+      <p class="case-lead">A single Firebase-authenticated login reads the user&rsquo;s role and calls <strong>appForRole()</strong> to mount one of three apps &mdash; all sitting on one shared, typed data layer.</p>
+      <div class="flow" role="img" aria-label="Flow: one login, role lookup by level, appForRole routing, the Admin, Parent or Driver app, the shared repository layer, Firestore streams, and live map plus QR attendance.">
+        <span class="flow__step">One login</span>
+        <span class="flow__step">Role lookup (level 1&middot;2&middot;3)</span>
+        <span class="flow__step flow__step--ai">appForRole()</span>
+        <span class="flow__step">Admin / Parent / Driver</span>
+        <span class="flow__step">Shared repository layer</span>
+        <span class="flow__step">Firestore streams</span>
+        <span class="flow__step flow__step--alert">Live map &amp; QR</span>
+      </div>
+      <div class="layer-grid">
+        <div class="layer glass"><span class="layer__k">Client</span><span class="layer__v">Flutter + Dart &mdash; one cross-platform codebase (Android, iOS, web, desktop). BLoC for flows; <code>ThemeExtension</code> palettes drive light/dark.</span></div>
+        <div class="layer glass"><span class="layer__k">Data layer</span><span class="layer__v">One typed model + repository per Firestore collection &mdash; an abstract interface with a Firebase implementation &mdash; so all three apps share a single, tested data layer.</span></div>
+        <div class="layer glass"><span class="layer__k">Backend</span><span class="layer__v">Firebase &mdash; Auth, Cloud Firestore (+ Realtime Database), Cloud Functions for admin-only driver provisioning, Storage, and Cloud Messaging.</span></div>
+        <div class="layer glass"><span class="layer__k">Maps &amp; charts</span><span class="layer__v">flutter_map + latlong2 over OpenStreetMap tiles for live tracking; fl_chart for occupancy and attendance analytics.</span></div>
+        <div class="layer glass"><span class="layer__k">Quality</span><span class="layer__v">204 passing automated tests with flutter_test and fake_cloud_firestore across the shared data layer and flows.</span></div>
+      </div>
+    </section>
+
+    <!-- Outcome -->
+    <section class="section case-block">
+      <h2 class="section__title">Outcome</h2>
+      <p class="case-lead">One Flutter codebase and one login fan out into three purpose-built role apps &mdash; admin, parent, and driver &mdash; unified by live GPS tracking and QR attendance over a shared, typed repository layer. Built solo, end to end: the three apps, the Firebase backend, and the light/dark design system.</p>
+      <p class="case-note">The source lives in a private repository and the app isn&rsquo;t published to any store &mdash; it runs on a live Firebase backend with seeded demo data.</p>
+      <div class="case-hero__actions">
+        <a class="btn btn--ghost" href="index.html#projects">Back to projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year">2026</span> Adith Senthil Kumar</p>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="gallery.js" defer></script>
+</body>
+</html>
