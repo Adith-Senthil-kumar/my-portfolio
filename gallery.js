@@ -6,6 +6,8 @@
    The native <dialog> gives focus-trapping + Esc-to-close for free,
    and returns focus to the triggering thumbnail on close.
    Reduced-motion is handled by the global rule in style.css.
+   Theme-aware: if a [data-set-theme] toggle is present, crossfades
+   each shot (and the open lightbox) between dark and light variants.
    ============================================================ */
 (function () {
   "use strict";
@@ -13,14 +15,19 @@
   var shots = Array.prototype.slice.call(document.querySelectorAll(".shot"));
   if (!shots.length || typeof HTMLDialogElement === "undefined") return;
 
+  var themeContainer = document.querySelector(".shots");
+  var theme = (themeContainer && themeContainer.getAttribute("data-theme")) || "dark";
+
   var slides = shots.map(function (btn) {
     var img = btn.querySelector("img");
     return {
-      full: btn.getAttribute("data-full"),
+      dark: btn.getAttribute("data-full"),
+      light: btn.getAttribute("data-full-light") || btn.getAttribute("data-full"),
       caption: btn.getAttribute("data-caption") || (img ? img.alt : ""),
       alt: img ? img.alt : ""
     };
   });
+  function fullFor(i) { return theme === "light" ? slides[i].light : slides[i].dark; }
 
   var dlg = document.createElement("dialog");
   dlg.className = "lightbox";
@@ -49,13 +56,13 @@
 
   function preload(i) {
     var im = new Image();
-    im.src = slides[(i + slides.length) % slides.length].full;
+    im.src = fullFor((i + slides.length) % slides.length);
   }
 
   function render() {
     var s = slides[current];
     imgEl.style.animation = "none";   // restart the pop animation each change
-    imgEl.src = s.full;
+    imgEl.src = fullFor(current);
     imgEl.alt = s.alt;
     void imgEl.offsetWidth;           // force reflow
     imgEl.style.animation = "";
@@ -87,6 +94,33 @@
   prevBtn.addEventListener("click", function () { go(-1); });
   nextBtn.addEventListener("click", function () { go(1); });
   closeBtn.addEventListener("click", close);
+
+  // Theme toggle (Dark / Light screenshots) — optional; no-ops if absent.
+  var toggles = Array.prototype.slice.call(document.querySelectorAll("[data-set-theme]"));
+  function swapLightbox() {                 // crossfade the open full image
+    var next = fullFor(current);
+    if (imgEl.getAttribute("src") === next) return;
+    function show() { imgEl.src = next; imgEl.style.opacity = "1"; }
+    var pre = new Image();
+    imgEl.style.opacity = "0";
+    pre.onload = show;
+    pre.onerror = show;
+    pre.src = next;
+  }
+
+  function setTheme(t) {
+    theme = t === "light" ? "light" : "dark";
+    if (themeContainer) themeContainer.setAttribute("data-theme", theme);  // CSS crossfades the thumbnails
+    toggles.forEach(function (b) {
+      var on = b.getAttribute("data-set-theme") === theme;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    if (dlg.open) swapLightbox();
+  }
+  toggles.forEach(function (b) {
+    b.addEventListener("click", function () { setTheme(b.getAttribute("data-set-theme")); });
+  });
 
   // Click on the empty backdrop area closes (img/buttons are separate targets).
   dlg.addEventListener("click", function (e) {

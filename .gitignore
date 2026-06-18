@@ -4,3 +4,6 @@
 
 # Raw screenshot sources (kept locally; optimized WebP lives in screenshots/)
 busbuddy_images/
+
+# Reel build artifacts (kept locally; deployed copy lives in media/)
+promo/

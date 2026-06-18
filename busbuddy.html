@@ -51,6 +51,22 @@
       </ul>
     </section>
 
+    <!-- Reel -->
+    <section class="section case-block">
+      <figure class="reel-figure">
+        <div class="reel">
+          <video class="reel__video" data-reel loop muted playsinline preload="none"
+                 width="1920" height="1080"
+                 poster="media/busbuddy-reel-poster.webp"
+                 aria-label="BusBuddy product reel: phones rise with a 3D tilt to show the Admin, Parent and Driver apps in light and dark.">
+            <source src="media/busbuddy-reel.mp4" type="video/mp4">
+          </video>
+          <button class="reel__toggle" type="button" aria-label="Pause reel" hidden>&#9208;</button>
+        </div>
+        <figcaption class="reel__caption">A 28-second tour &mdash; the Admin, Parent and Driver apps, in light and dark.</figcaption>
+      </figure>
+    </section>
+
     <!-- Overview / stat strip -->
     <section class="section case-block">
       <div class="metrics">
@@ -91,21 +107,39 @@
       <h2 class="section__title">Screenshots</h2>
       <p class="case-lead">One login, three apps &mdash; here&rsquo;s how each role sees BusBuddy. Tap any screen to view it full size.</p>
 
-      <div class="shots">
+      <div class="theme-toggle" role="group" aria-label="Screenshot theme">
+        <span class="theme-toggle__label">Theme</span>
+        <button type="button" class="theme-toggle__btn is-active" data-set-theme="dark" aria-pressed="true">Dark</button>
+        <button type="button" class="theme-toggle__btn" data-set-theme="light" aria-pressed="false">Light</button>
+      </div>
+
+      <div class="shots" data-theme="dark">
         <div class="shots__group">
           <p class="shots__label">Admin &middot; Fleet console</p>
           <div class="shots__grid">
-            <button class="shot" type="button" data-full="screenshots/busbuddy/admin-tracking.webp" data-caption="Admin &middot; Live fleet tracking" aria-label="Admin live fleet tracking — view full size">
-              <img src="screenshots/busbuddy/admin-tracking-thumb.webp" alt="BusBuddy admin live-tracking screen: a map with a bus marker above a list of buses showing driver, route and last-updated staleness chips" width="560" height="1219" loading="lazy" decoding="async">
+            <button class="shot" type="button" data-full="screenshots/busbuddy/admin-tracking.webp" data-full-light="screenshots/busbuddy/admin-tracking-light.webp" data-caption="Admin &middot; Live fleet tracking" aria-label="Admin live fleet tracking — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/busbuddy/admin-tracking-thumb.webp" alt="BusBuddy admin live-tracking screen: a map with a bus marker above a list of buses showing driver, route and last-updated staleness chips" width="560" height="1219" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/busbuddy/admin-tracking-light-thumb.webp" alt="" aria-hidden="true" width="560" height="1219" loading="lazy" decoding="async">
+              </span>
             </button>
-            <button class="shot" type="button" data-full="screenshots/busbuddy/admin-home.webp" data-caption="Admin &middot; Fleet dashboard" aria-label="Admin fleet dashboard — view full size">
-              <img src="screenshots/busbuddy/admin-home-thumb.webp" alt="BusBuddy admin home screen: metric cards for buses, assigned and drivers above a searchable bus list with occupancy chips" width="560" height="1219" loading="lazy" decoding="async">
+            <button class="shot" type="button" data-full="screenshots/busbuddy/admin-home.webp" data-full-light="screenshots/busbuddy/admin-home-light.webp" data-caption="Admin &middot; Fleet dashboard" aria-label="Admin fleet dashboard — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/busbuddy/admin-home-thumb.webp" alt="BusBuddy admin home screen: metric cards for buses, assigned and drivers above a searchable bus list with occupancy chips" width="560" height="1219" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/busbuddy/admin-home-light-thumb.webp" alt="" aria-hidden="true" width="560" height="1219" loading="lazy" decoding="async">
+              </span>
             </button>
-            <button class="shot" type="button" data-full="screenshots/busbuddy/admin-reports.webp" data-caption="Admin &middot; Reports &amp; analytics" aria-label="Admin reports and analytics — view full size">
-              <img src="screenshots/busbuddy/admin-reports-thumb.webp" alt="BusBuddy admin reports screen: occupancy and attendance analytics rendered as charts with fl_chart" width="560" height="1219" loading="lazy" decoding="async">
+            <button class="shot" type="button" data-full="screenshots/busbuddy/admin-reports.webp" data-full-light="screenshots/busbuddy/admin-reports-light.webp" data-caption="Admin &middot; Reports &amp; analytics" aria-label="Admin reports and analytics — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/busbuddy/admin-reports-thumb.webp" alt="BusBuddy admin reports screen: occupancy and attendance analytics rendered as charts with fl_chart" width="560" height="1219" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/busbuddy/admin-reports-light-thumb.webp" alt="" aria-hidden="true" width="560" height="1219" loading="lazy" decoding="async">
+              </span>
             </button>
-            <button class="shot" type="button" data-full="screenshots/busbuddy/admin-buses.webp" data-caption="Admin &middot; Bus management" aria-label="Admin bus management — view full size">
-              <img src="screenshots/busbuddy/admin-buses-thumb.webp" alt="BusBuddy admin bus-management screen: a list of buses with management actions" width="560" height="1219" loading="lazy" decoding="async">
+            <button class="shot" type="button" data-full="screenshots/busbuddy/admin-buses.webp" data-full-light="screenshots/busbuddy/admin-buses-light.webp" data-caption="Admin &middot; Bus management" aria-label="Admin bus management — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/busbuddy/admin-buses-thumb.webp" alt="BusBuddy admin bus-management screen: a list of buses with management actions" width="560" height="1219" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/busbuddy/admin-buses-light-thumb.webp" alt="" aria-hidden="true" width="560" height="1219" loading="lazy" decoding="async">
+              </span>
             </button>
           </div>
         </div>
@@ -113,14 +147,23 @@
         <div class="shots__group">
           <p class="shots__label">Parent &middot; Live tracker</p>
           <div class="shots__grid">
-            <button class="shot" type="button" data-full="screenshots/busbuddy/parent-home.webp" data-caption="Parent &middot; Live status" aria-label="Parent live status — view full size">
-              <img src="screenshots/busbuddy/parent-home-thumb.webp" alt="BusBuddy parent home screen: a mint status hero showing next stop and an ETA progress bar, the driver card, and the route stops" width="560" height="1219" loading="lazy" decoding="async">
+            <button class="shot" type="button" data-full="screenshots/busbuddy/parent-home.webp" data-full-light="screenshots/busbuddy/parent-home-light.webp" data-caption="Parent &middot; Live status" aria-label="Parent live status — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/busbuddy/parent-home-thumb.webp" alt="BusBuddy parent home screen: a mint status hero showing next stop and an ETA progress bar, the driver card, and the route stops" width="560" height="1219" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/busbuddy/parent-home-light-thumb.webp" alt="" aria-hidden="true" width="560" height="1219" loading="lazy" decoding="async">
+              </span>
             </button>
-            <button class="shot" type="button" data-full="screenshots/busbuddy/parent-tracking.webp" data-caption="Parent &middot; Live location" aria-label="Parent live location — view full size">
-              <img src="screenshots/busbuddy/parent-tracking-thumb.webp" alt="BusBuddy parent live-location screen: the child's bus moving on a map in real time" width="560" height="1219" loading="lazy" decoding="async">
+            <button class="shot" type="button" data-full="screenshots/busbuddy/parent-tracking.webp" data-full-light="screenshots/busbuddy/parent-tracking-light.webp" data-caption="Parent &middot; Live location" aria-label="Parent live location — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/busbuddy/parent-tracking-thumb.webp" alt="BusBuddy parent live-location screen: the child's bus moving on a map in real time" width="560" height="1219" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/busbuddy/parent-tracking-light-thumb.webp" alt="" aria-hidden="true" width="560" height="1219" loading="lazy" decoding="async">
+              </span>
             </button>
-            <button class="shot" type="button" data-full="screenshots/busbuddy/parent-bus.webp" data-caption="Parent &middot; Bus details" aria-label="Parent bus details — view full size">
-              <img src="screenshots/busbuddy/parent-bus-thumb.webp" alt="BusBuddy parent bus screen: bus, driver and route details" width="560" height="1219" loading="lazy" decoding="async">
+            <button class="shot" type="button" data-full="screenshots/busbuddy/parent-bus.webp" data-full-light="screenshots/busbuddy/parent-bus-light.webp" data-caption="Parent &middot; Bus details" aria-label="Parent bus details — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/busbuddy/parent-bus-thumb.webp" alt="BusBuddy parent bus screen: bus, driver and route details" width="560" height="1219" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/busbuddy/parent-bus-light-thumb.webp" alt="" aria-hidden="true" width="560" height="1219" loading="lazy" decoding="async">
+              </span>
             </button>
           </div>
         </div>
@@ -128,14 +171,23 @@
         <div class="shots__group">
           <p class="shots__label">Driver &middot; Companion</p>
           <div class="shots__grid">
-            <button class="shot" type="button" data-full="screenshots/busbuddy/driver-home.webp" data-caption="Driver &middot; Dashboard" aria-label="Driver dashboard — view full size">
-              <img src="screenshots/busbuddy/driver-home-thumb.webp" alt="BusBuddy driver home screen: a greeting, a pinned live map, a status hero, stat cards and a stops timeline" width="560" height="1219" loading="lazy" decoding="async">
+            <button class="shot" type="button" data-full="screenshots/busbuddy/driver-home.webp" data-full-light="screenshots/busbuddy/driver-home-light.webp" data-caption="Driver &middot; Dashboard" aria-label="Driver dashboard — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/busbuddy/driver-home-thumb.webp" alt="BusBuddy driver home screen: a greeting, a pinned live map, a status hero, stat cards and a stops timeline" width="560" height="1219" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/busbuddy/driver-home-light-thumb.webp" alt="" aria-hidden="true" width="560" height="1219" loading="lazy" decoding="async">
+              </span>
             </button>
-            <button class="shot" type="button" data-full="screenshots/busbuddy/driver-scan.webp" data-caption="Driver &middot; QR attendance" aria-label="Driver QR attendance scan — view full size">
-              <img src="screenshots/busbuddy/driver-scan-thumb.webp" alt="BusBuddy driver QR-scan screen for marking students present by scanning a code" width="560" height="1219" loading="lazy" decoding="async">
+            <button class="shot" type="button" data-full="screenshots/busbuddy/driver-scan.webp" data-full-light="screenshots/busbuddy/driver-scan-light.webp" data-caption="Driver &middot; QR attendance" aria-label="Driver QR attendance scan — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/busbuddy/driver-scan-thumb.webp" alt="BusBuddy driver QR-scan screen for marking students present by scanning a code" width="560" height="1219" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/busbuddy/driver-scan-light-thumb.webp" alt="" aria-hidden="true" width="560" height="1219" loading="lazy" decoding="async">
+              </span>
             </button>
-            <button class="shot" type="button" data-full="screenshots/busbuddy/driver-attendance.webp" data-caption="Driver &middot; Attendance" aria-label="Driver attendance list — view full size">
-              <img src="screenshots/busbuddy/driver-attendance-thumb.webp" alt="BusBuddy driver attendance screen listing students and their boarding status" width="560" height="1219" loading="lazy" decoding="async">
+            <button class="shot" type="button" data-full="screenshots/busbuddy/driver-attendance.webp" data-full-light="screenshots/busbuddy/driver-attendance-light.webp" data-caption="Driver &middot; Attendance" aria-label="Driver attendance list — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/busbuddy/driver-attendance-thumb.webp" alt="BusBuddy driver attendance screen listing students and their boarding status" width="560" height="1219" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/busbuddy/driver-attendance-light-thumb.webp" alt="" aria-hidden="true" width="560" height="1219" loading="lazy" decoding="async">
+              </span>
             </button>
           </div>
         </div>
@@ -181,5 +233,6 @@
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script src="gallery.js" defer></script>
+  <script src="reel.js" defer></script>
 </body>
 </html>
