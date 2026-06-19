@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GymOS — Case Study | Adith Senthil Kumar</title>
+  <meta name="description" content="Case study: GymOS — an offline-first Android workout & nutrition tracker. No account, no cloud: routines, per-set programming, macros, barcode scanning and progress photos in an on-device SQLite database. React Native, Expo, TypeScript.">
+  <meta name="theme-color" content="#0d0a1f">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="GymOS — Case Study">
+  <meta property="og:description" content="An offline-first workout & nutrition tracker — no account, no cloud. Routines, per-set programming, macros and progress photos in on-device SQLite. React Native · Expo · TypeScript.">
+  <meta property="og:url" content="https://adith-senthil-kumar.github.io/my-portfolio/gymos.html">
+  <meta property="og:image" content="https://adith-senthil-kumar.github.io/my-portfolio/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://adith-senthil-kumar.github.io/my-portfolio/og.png">
+  <link rel="canonical" href="https://adith-senthil-kumar.github.io/my-portfolio/gymos.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0a1f'/><circle cx='16' cy='17' r='8' fill='%23f5c54e'/><rect y='22' width='32' height='10' fill='%230d0a1f'/><rect x='4' y='22' width='24' height='2' fill='%23f0795f'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="case">
+  <a class="skip-link" href="#case-main">Skip to content</a>
+
+  <header class="case-nav">
+    <div class="case-nav__inner">
+      <a class="case-nav__back" href="index.html#projects">&larr; Back to portfolio</a>
+      <span class="pub__badge">React Native app</span>
+    </div>
+  </header>
+
+  <main id="case-main">
+    <!-- Hero -->
+    <section class="section case-hero">
+      <p class="eyebrow">Case study &middot; Personal project</p>
+      <h1 class="case-hero__title">GymOS</h1>
+      <p class="case-hero__sub">An offline-first workout &amp; nutrition tracker &mdash; no account, no cloud. Routines, per-set programming, macros, barcode scanning, and progress photos all live in an on-device SQLite database and work entirely offline.</p>
+      <ul class="case-meta">
+        <li>Solo project</li>
+        <li>React Native &middot; Expo &middot; TypeScript</li>
+        <li>Android &middot; offline-first</li>
+      </ul>
+      <div class="case-hero__actions">
+        <a class="btn btn--primary" href="#screenshots">View screenshots &darr;</a>
+        <a class="btn btn--ghost" href="index.html#projects">Back to projects</a>
+      </div>
+      <ul class="tags case-hero__tags">
+        <li>React Native</li><li>Expo</li><li>TypeScript</li><li>SQLite</li><li>Drizzle ORM</li><li>Zustand</li><li>react-native-paper</li>
+      </ul>
+    </section>
+
+    <!-- Reel -->
+    <section class="section case-block">
+      <figure class="reel-figure">
+        <div class="reel reel--portrait">
+          <video class="reel__video" data-reel loop muted playsinline preload="none"
+                 width="1080" height="1920"
+                 poster="media/gymos-reel-poster.webp"
+                 aria-label="GymOS product reel: a tour of the offline-first tracker — home dashboard, live workout logging, the routine builder, nutrition, and the anatomical muscle map.">
+            <source src="media/gymos-reel.mp4" type="video/mp4">
+          </video>
+          <button class="reel__toggle" type="button" aria-label="Pause reel" hidden>&#9208;</button>
+        </div>
+        <figcaption class="reel__caption">A 24-second tour &mdash; logging, routines, nutrition, and analytics, all offline.</figcaption>
+      </figure>
+    </section>
+
+    <!-- Overview / stat strip -->
+    <section class="section case-block">
+      <div class="metrics">
+        <div class="metric glass"><span class="metric__num">24</span><span class="metric__label">Screens</span></div>
+        <div class="metric glass"><span class="metric__num">13</span><span class="metric__label">SQLite tables</span></div>
+        <div class="metric glass"><span class="metric__num">47</span><span class="metric__label">Passing tests</span></div>
+        <div class="metric glass"><span class="metric__num">0</span><span class="metric__label">Servers &middot; accounts</span></div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section case-block">
+      <h2 class="section__title">The problem</h2>
+      <p class="case-lead">Most gym and diet apps demand sign-ups, subscriptions, and cloud sync &mdash; then stall the moment you lose signal in a basement gym.</p>
+      <ul class="case-list">
+        <li>Tracking is gated behind <strong>accounts and subscriptions</strong>, with your training data living on someone else&rsquo;s server.</li>
+        <li>Apps <strong>degrade without connectivity</strong> &mdash; exactly where a gym tends to be.</li>
+        <li>Workout logging and nutrition usually live in <strong>separate apps</strong>, so the full picture is split in two.</li>
+      </ul>
+    </section>
+
+    <!-- Solution -->
+    <section class="section case-block">
+      <h2 class="section__title">What I built</h2>
+      <p class="case-lead">GymOS keeps a complete, private training <em>and</em> nutrition log <strong>entirely on the device</strong> &mdash; account-free and fully usable offline.</p>
+      <div class="feature-grid">
+        <div class="feature glass"><h3>Workout logger</h3><p>Routines with training-day tabs, supersets/circuits, and per-set schemes (rep ranges, warm-ups, per-set weight/RPE). Live sessions add a rest timer, plate calculator, and automatic PR detection.</p></div>
+        <div class="feature glass"><h3>Routine builder</h3><p>Drag-to-reorder, a multi-select exercise picker, duplicate-day, and a per-set target editor whose prescriptions seed the live workout.</p></div>
+        <div class="feature glass"><h3>Nutrition tracking</h3><p>Calorie/macro goals (TDEE via Mifflin&ndash;St Jeor, with diet phases), a meal planner, and barcode scanning + food search via OpenFoodFacts &amp; USDA, cached on-device.</p></div>
+        <div class="feature glass"><h3>Body &amp; analytics</h3><p>Body-measurement logging, progress photos, and an anatomical muscle-volume &amp; recovery map, plus strength-progression and workout stats.</p></div>
+        <div class="feature glass"><h3>Offline-first data layer</h3><p>A 13-table SQLite database via Drizzle ORM with on-device schema migrations at launch, plus full CSV + JSON backup &amp; restore.</p></div>
+        <div class="feature glass"><h3>Polish</h3><p>Light / Dark / AMOLED themes, kg&ndash;lb units, haptics, rest-timer notifications, and over-the-air JS updates via EAS Update.</p></div>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="section case-block" id="screenshots">
+      <h2 class="section__title">Screenshots</h2>
+      <p class="case-lead">Built for the gym, dark by default (it ships Light / Dark / AMOLED). Tap any screen to view it full size.</p>
+
+      <div class="theme-toggle" role="group" aria-label="Screenshot theme">
+        <span class="theme-toggle__label">Theme</span>
+        <button type="button" class="theme-toggle__btn is-active" data-set-theme="dark" aria-pressed="true">Dark</button>
+        <button type="button" class="theme-toggle__btn" data-set-theme="light" aria-pressed="false">Light</button>
+      </div>
+
+      <div class="shots" data-theme="dark">
+        <div class="shots__group">
+          <p class="shots__label">Training</p>
+          <div class="shots__grid">
+            <button class="shot" type="button" data-full="screenshots/gymos/home.webp" data-full-light="screenshots/gymos/home-light.webp" data-caption="Home &middot; Dashboard" aria-label="Home dashboard — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/gymos/home-thumb.webp" alt="GymOS home dashboard: calorie and water rings, a day-streak counter, today's workout, and recent personal records" width="560" height="1231" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/gymos/home-light-thumb.webp" alt="" aria-hidden="true" width="560" height="1231" loading="lazy" decoding="async">
+              </span>
+            </button>
+            <button class="shot" type="button" data-full="screenshots/gymos/active-workout.webp" data-full-light="screenshots/gymos/active-workout-light.webp" data-caption="Live workout" aria-label="Live workout logging — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/gymos/active-workout-thumb.webp" alt="GymOS active workout screen: live set logging with a rest timer, RPE column, supersets, and a New PR indicator" width="560" height="1231" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/gymos/active-workout-light-thumb.webp" alt="" aria-hidden="true" width="560" height="1231" loading="lazy" decoding="async">
+              </span>
+            </button>
+            <button class="shot" type="button" data-full="screenshots/gymos/edit-routine.webp" data-full-light="screenshots/gymos/edit-routine-light.webp" data-caption="Routine builder" aria-label="Routine builder — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/gymos/edit-routine-thumb.webp" alt="GymOS edit-routine screen: a per-set routine builder with training-day tabs, supersets, and scheme summaries" width="560" height="1231" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/gymos/edit-routine-light-thumb.webp" alt="" aria-hidden="true" width="560" height="1231" loading="lazy" decoding="async">
+              </span>
+            </button>
+            <button class="shot" type="button" data-full="screenshots/gymos/workout-calendar.webp" data-full-light="screenshots/gymos/workout-calendar-light.webp" data-caption="History calendar" aria-label="Workout history calendar — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/gymos/workout-calendar-thumb.webp" alt="GymOS workout history calendar marking logged training days" width="560" height="1231" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/gymos/workout-calendar-light-thumb.webp" alt="" aria-hidden="true" width="560" height="1231" loading="lazy" decoding="async">
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <div class="shots__group">
+          <p class="shots__label">Nutrition</p>
+          <div class="shots__grid">
+            <button class="shot" type="button" data-full="screenshots/gymos/diet.webp" data-full-light="screenshots/gymos/diet-light.webp" data-caption="Nutrition" aria-label="Nutrition / diet — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/gymos/diet-thumb.webp" alt="GymOS diet screen: calorie and macro rings above the day's logged meals" width="560" height="1231" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/gymos/diet-light-thumb.webp" alt="" aria-hidden="true" width="560" height="1231" loading="lazy" decoding="async">
+              </span>
+            </button>
+            <button class="shot" type="button" data-full="screenshots/gymos/add-food.webp" data-full-light="screenshots/gymos/add-food-light.webp" data-caption="Add food &middot; barcode &amp; search" aria-label="Add food, barcode and search — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/gymos/add-food-thumb.webp" alt="GymOS add-food screen with barcode scanning and food search backed by OpenFoodFacts and USDA" width="560" height="1231" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/gymos/add-food-light-thumb.webp" alt="" aria-hidden="true" width="560" height="1231" loading="lazy" decoding="async">
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <div class="shots__group">
+          <p class="shots__label">Analytics</p>
+          <div class="shots__grid">
+            <button class="shot" type="button" data-full="screenshots/gymos/muscle-volume.webp" data-full-light="screenshots/gymos/muscle-volume-light.webp" data-caption="Muscle volume map" aria-label="Muscle volume map — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/gymos/muscle-volume-thumb.webp" alt="GymOS anatomical muscle-volume heatmap showing training volume per muscle group" width="560" height="1231" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/gymos/muscle-volume-light-thumb.webp" alt="" aria-hidden="true" width="560" height="1231" loading="lazy" decoding="async">
+              </span>
+            </button>
+            <button class="shot" type="button" data-full="screenshots/gymos/muscle-recovery.webp" data-full-light="screenshots/gymos/muscle-recovery-light.webp" data-caption="Recovery map" aria-label="Muscle recovery map — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/gymos/muscle-recovery-thumb.webp" alt="GymOS anatomical muscle-recovery map showing recovery status per muscle group" width="560" height="1231" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/gymos/muscle-recovery-light-thumb.webp" alt="" aria-hidden="true" width="560" height="1231" loading="lazy" decoding="async">
+              </span>
+            </button>
+            <button class="shot" type="button" data-full="screenshots/gymos/stats.webp" data-full-light="screenshots/gymos/stats-light.webp" data-caption="Strength stats" aria-label="Strength progression stats — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/gymos/stats-thumb.webp" alt="GymOS stats screen with strength-progression charts over time" width="560" height="1231" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/gymos/stats-light-thumb.webp" alt="" aria-hidden="true" width="560" height="1231" loading="lazy" decoding="async">
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section case-block">
+      <h2 class="section__title">How it works</h2>
+      <p class="case-lead">Expo + React Native with TypeScript in strict mode. Every routine, set, meal, and photo persists to an on-device SQLite database &mdash; there is no server in the loop.</p>
+      <div class="flow" role="img" aria-label="Data flow: the Expo React Native app, Zustand stores, Drizzle ORM, on-device SQLite, migrations at launch, and CSV/JSON backup.">
+        <span class="flow__step">Expo + RN app</span>
+        <span class="flow__step">Zustand stores</span>
+        <span class="flow__step">Drizzle ORM</span>
+        <span class="flow__step flow__step--alert">SQLite (on-device)</span>
+        <span class="flow__step">Migrations at launch</span>
+        <span class="flow__step">CSV / JSON backup</span>
+      </div>
+      <div class="layer-grid">
+        <div class="layer glass"><span class="layer__k">Client</span><span class="layer__v">React Native 0.81 / React 19 on Expo SDK 54, TypeScript strict. ~24 screens via React Navigation (bottom-tabs + stacks); react-native-paper (Material&nbsp;3).</span></div>
+        <div class="layer glass"><span class="layer__k">State</span><span class="layer__v">Zustand stores for session &amp; UI; the active-workout store persists to AsyncStorage, so an in-progress session survives an app restart.</span></div>
+        <div class="layer glass"><span class="layer__k">Data</span><span class="layer__v">SQLite (<code>expo-sqlite</code>) through Drizzle ORM — a 13-table schema with drizzle-kit migrations applied on first launch via <code>useMigrations</code>.</span></div>
+        <div class="layer glass"><span class="layer__k">Nutrition</span><span class="layer__v">OpenFoodFacts + USDA FoodData Central APIs for barcode &amp; search, with results cached on-device.</span></div>
+        <div class="layer glass"><span class="layer__k">Graphics</span><span class="layer__v">victory-native + Skia + SVG for charts; react-native-body-highlighter for the muscle map; Reanimated, Gesture Handler &amp; draggable-flatlist for motion.</span></div>
+        <div class="layer glass"><span class="layer__k">Build &amp; test</span><span class="layer__v">EAS Build (Android APK) + EAS Update for OTA JavaScript; 47 Jest (jest-expo) unit tests.</span></div>
+      </div>
+    </section>
+
+    <!-- Outcome -->
+    <section class="section case-block">
+      <h2 class="section__title">Outcome</h2>
+      <p class="case-lead">A complete strength-and-nutrition tracker that needs no account and no backend &mdash; routines, per-set programming, macros, and progress photos all live in an on-device SQLite database and work entirely offline, with barcode nutrition pulled from OpenFoodFacts/USDA and cached locally. Designed, architected, and built solo.</p>
+      <p class="case-note">Source is a private local repository and the app isn&rsquo;t published &mdash; it runs as a sideloaded Android build (EAS preview). iOS is Expo-ready but not yet built.</p>
+      <div class="case-hero__actions">
+        <a class="btn btn--ghost" href="index.html#projects">Back to projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year">2026</span> Adith Senthil Kumar</p>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="gallery.js" defer></script>
+  <script src="reel.js" defer></script>
+</body>
+</html>
