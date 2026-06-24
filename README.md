@@ -38,7 +38,7 @@ Run an entire PG / hostel from one real-time app — seven modules on an owner-s
 <a href="https://adith-senthil-kumar.github.io/my-portfolio/staytrack.html"><b>Deep dive</b></a> · <a href="https://staytrack-ca1ac.web.app"><b>Live demo ↗</b></a>
 </td>
 <td width="33%" valign="top" align="center">
-<a href="https://adith-senthil-kumar.github.io/my-portfolio/gymos.html"><img src="media/gymos-reel-poster.webp" width="100%"></a>
+<a href="https://adith-senthil-kumar.github.io/my-portfolio/gymos.html"><img src="media/gymos-card.webp" width="100%"></a>
 <h3>GymOS</h3>
 Offline-first workout &amp; nutrition tracker — no account, no cloud. On-device SQLite via Drizzle.
 <br><br>
