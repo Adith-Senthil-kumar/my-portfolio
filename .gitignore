@@ -11,3 +11,7 @@ promo/
 # GymOS raw assets (kept locally; optimized in screenshots/gymos + media/)
 # Leading slash anchors to repo root so it does NOT match screenshots/gymos/
 /gymos/
+
+# New reel sources + StayTrack raw screenshots (kept local)
+/video/
+/staytrack/

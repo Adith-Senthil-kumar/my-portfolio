@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StayTrack — Case Study | Adith Senthil Kumar</title>
+  <meta name="description" content="Case study: StayTrack — run an entire paying-guest (PG/hostel) property from one real-time app: rooms & occupancy, tenants & rent, walk-in stays, staff & payroll, expenses & maintenance. React Native, Expo, Firebase. Live demo.">
+  <meta name="theme-color" content="#0d0a1f">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="StayTrack — Case Study">
+  <meta property="og:description" content="One real-time, cross-platform codebase runs an entire PG business — seven modules from rent to payroll to maintenance — on a hardened, owner-scoped Firebase backend. Live demo.">
+  <meta property="og:url" content="https://adith-senthil-kumar.github.io/my-portfolio/staytrack.html">
+  <meta property="og:image" content="https://adith-senthil-kumar.github.io/my-portfolio/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://adith-senthil-kumar.github.io/my-portfolio/og.png">
+  <link rel="canonical" href="https://adith-senthil-kumar.github.io/my-portfolio/staytrack.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0a1f'/><circle cx='16' cy='17' r='8' fill='%23f5c54e'/><rect y='22' width='32' height='10' fill='%230d0a1f'/><rect x='4' y='22' width='24' height='2' fill='%23f0795f'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="case">
+  <a class="skip-link" href="#case-main">Skip to content</a>
+
+  <header class="case-nav">
+    <div class="case-nav__inner">
+      <a class="case-nav__back" href="index.html#projects">&larr; Back to portfolio</a>
+      <span class="pub__badge">Live web app</span>
+    </div>
+  </header>
+
+  <main id="case-main">
+    <!-- Hero -->
+    <section class="section case-hero">
+      <p class="eyebrow">Case study &middot; Personal project</p>
+      <h1 class="case-hero__title">StayTrack</h1>
+      <p class="case-hero__sub">Run an entire paying-guest property from one real-time app &mdash; rooms and occupancy, tenants and rent, walk-in stays, staff and payroll, expenses and maintenance &mdash; on a hardened, owner-scoped Firebase backend.</p>
+      <ul class="case-meta">
+        <li>Solo &middot; AI pair-programming</li>
+        <li>React Native &middot; Expo &middot; Firebase</li>
+        <li>Web (live) &middot; iOS / Android</li>
+      </ul>
+      <div class="case-hero__actions">
+        <a class="btn btn--primary" href="https://staytrack-ca1ac.web.app" target="_blank" rel="noopener">Open live app &rarr;</a>
+        <a class="btn btn--ghost" href="#screenshots">View screenshots &darr;</a>
+      </div>
+      <ul class="tags case-hero__tags">
+        <li>React Native</li><li>Expo</li><li>TypeScript</li><li>Firebase</li><li>Cloud Firestore</li><li>NativeWind</li><li>Zustand</li>
+      </ul>
+    </section>
+
+    <!-- Reel -->
+    <section class="section case-block">
+      <figure class="reel-figure">
+        <div class="reel">
+          <video class="reel__video" data-reel loop muted playsinline preload="none"
+                 width="1920" height="1080"
+                 poster="media/staytrack-reel-poster.webp"
+                 aria-label="StayTrack product reel: a walkthrough of the live web app — rooms and occupancy, rent collection, payroll, short-stay bookings, and the expense ledger.">
+            <source src="media/staytrack-reel.mp4" type="video/mp4">
+          </video>
+          <button class="reel__toggle" type="button" aria-label="Pause reel" hidden>&#9208;</button>
+        </div>
+        <figcaption class="reel__caption">A 37-second walkthrough of the live web app. Tap the speaker for sound.</figcaption>
+      </figure>
+    </section>
+
+    <!-- Overview / stat strip -->
+    <section class="section case-block">
+      <div class="metrics">
+        <div class="metric glass"><span class="metric__num">7</span><span class="metric__label">Functional modules</span></div>
+        <div class="metric glass"><span class="metric__num">44</span><span class="metric__label">Passing tests</span></div>
+        <div class="metric glass"><span class="metric__num">1</span><span class="metric__label">Cross-platform codebase</span></div>
+        <div class="metric glass"><span class="metric__num">Live</span><span class="metric__label">On Firebase Hosting</span></div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section case-block">
+      <h2 class="section__title">The problem</h2>
+      <p class="case-lead">Small PG and hostel owners run their whole business across notebooks, spreadsheets, and WhatsApp &mdash; rent in one place, payroll in another, repairs on a sticky note.</p>
+      <ul class="case-list">
+        <li>Rent, dues, and deposits are tracked <strong>by hand</strong>, so collections and arrears are easy to lose.</li>
+        <li>Staff attendance and <strong>payroll</strong> get reconciled manually, every month.</li>
+        <li>Walk-in guests, expenses, and <strong>maintenance</strong> live in separate places, with no single source of truth.</li>
+      </ul>
+    </section>
+
+    <!-- Solution -->
+    <section class="section case-block">
+      <h2 class="section__title">What I built</h2>
+      <p class="case-lead">StayTrack consolidates the entire property into <strong>one real-time app</strong> &mdash; seven modules, from rent to payroll to repairs, with dues tracking and printable receipts.</p>
+      <div class="feature-grid">
+        <div class="feature glass"><h3>Rooms &amp; occupancy</h3><p>A floor-by-floor building view of every room with live occupancy, collection, dues, and availability &mdash; plus status and floor filters.</p></div>
+        <div class="feature glass"><h3>Tenants &amp; rent</h3><p>Add, edit, vacate, and delete tenants; capture KYC scans; auto-generate monthly dues; record payments; and print rent receipts.</p></div>
+        <div class="feature glass"><h3>Short-stay bookings</h3><p>Day-by-day walk-in room booking with ID capture, a live balance, checkout, guest history, and printable receipts.</p></div>
+        <div class="feature glass"><h3>Staff &amp; payroll</h3><p>Roster, daily attendance, a weekly duty schedule, leave requests, and per-day-prorated payroll with printable payslips.</p></div>
+        <div class="feature glass"><h3>Expenses &amp; maintenance</h3><p>A categorized expense ledger plus a ticket board (open / in-progress / done); resolving a ticket auto-logs a repair expense.</p></div>
+        <div class="feature glass"><h3>Safety &amp; polish</h3><p>Confirmation dialogs for destructive actions, occupied-room edit guards, a light/dark theme, and responsive desktop-table &harr; mobile-card layouts.</p></div>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="section case-block" id="screenshots">
+      <h2 class="section__title">Screenshots</h2>
+      <p class="case-lead">The whole property in one place. Dark by default (the app ships light &amp; dark); tap any screen to view it full size.</p>
+
+      <div class="theme-toggle" role="group" aria-label="Screenshot theme">
+        <span class="theme-toggle__label">Theme</span>
+        <button type="button" class="theme-toggle__btn is-active" data-set-theme="dark" aria-pressed="true">Dark</button>
+        <button type="button" class="theme-toggle__btn" data-set-theme="light" aria-pressed="false">Light</button>
+      </div>
+
+      <div class="shots" data-theme="dark">
+        <div class="shots__group">
+          <p class="shots__label">Rooms &amp; tenants</p>
+          <div class="shots__grid">
+            <button class="shot shot--web" type="button" data-full="screenshots/staytrack/rooms.webp" data-full-light="screenshots/staytrack/rooms-light.webp" data-caption="Rooms &amp; occupancy dashboard" aria-label="Rooms and occupancy dashboard — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/staytrack/rooms-thumb.webp" alt="StayTrack rooms and occupancy dashboard: occupancy, collection and dues stat cards above a floor-by-floor building view of colour-coded room tiles" width="880" height="553" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/staytrack/rooms-light-thumb.webp" alt="" aria-hidden="true" width="880" height="553" loading="lazy" decoding="async">
+              </span>
+            </button>
+            <button class="shot shot--web" type="button" data-full="screenshots/staytrack/tenant.webp" data-full-light="screenshots/staytrack/tenant-light.webp" data-caption="Tenant detail" aria-label="Tenant detail panel — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/staytrack/tenant-thumb.webp" alt="StayTrack tenant detail panel: rent status, security deposit, and a KYC document checklist with scan thumbnails" width="880" height="553" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/staytrack/tenant-light-thumb.webp" alt="" aria-hidden="true" width="880" height="553" loading="lazy" decoding="async">
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <div class="shots__group">
+          <p class="shots__label">Money</p>
+          <div class="shots__grid">
+            <button class="shot shot--web" type="button" data-full="screenshots/staytrack/rent.webp" data-full-light="screenshots/staytrack/rent-light.webp" data-caption="Rent collection" aria-label="Rent collection — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/staytrack/rent-thumb.webp" alt="StayTrack rent collection screen: a dues list with Paid and Overdue status and Record Payment and Receipt actions" width="880" height="553" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/staytrack/rent-light-thumb.webp" alt="" aria-hidden="true" width="880" height="553" loading="lazy" decoding="async">
+              </span>
+            </button>
+            <button class="shot shot--web" type="button" data-full="screenshots/staytrack/payroll.webp" data-full-light="screenshots/staytrack/payroll-light.webp" data-caption="Staff payroll" aria-label="Staff payroll — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/staytrack/payroll-thumb.webp" alt="StayTrack staff payroll: per-staff base pay, days worked, per-day-prorated net pay, the monthly total, and a Payslip action" width="880" height="553" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/staytrack/payroll-light-thumb.webp" alt="" aria-hidden="true" width="880" height="553" loading="lazy" decoding="async">
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <div class="shots__group">
+          <p class="shots__label">Operations</p>
+          <div class="shots__grid">
+            <button class="shot shot--web" type="button" data-full="screenshots/staytrack/shortstay.webp" data-full-light="screenshots/staytrack/shortstay-light.webp" data-caption="Short-stay booking" aria-label="Short-stay walk-in booking — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/staytrack/shortstay-thumb.webp" alt="StayTrack short-stay walk-in booking form: date and time, ID type, and rate, with a live balance" width="880" height="553" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/staytrack/shortstay-light-thumb.webp" alt="" aria-hidden="true" width="880" height="553" loading="lazy" decoding="async">
+              </span>
+            </button>
+            <button class="shot shot--web" type="button" data-full="screenshots/staytrack/maintenance.webp" data-full-light="screenshots/staytrack/maintenance-light.webp" data-caption="Maintenance board" aria-label="Maintenance status board — view full size">
+              <span class="shot__media">
+                <img class="shot__img shot__img--dark" src="screenshots/staytrack/maintenance-thumb.webp" alt="StayTrack maintenance status board: open, in-progress and done tickets, where resolving a ticket auto-logs a repair expense" width="880" height="553" loading="lazy" decoding="async">
+                <img class="shot__img shot__img--light" src="screenshots/staytrack/maintenance-light-thumb.webp" alt="" aria-hidden="true" width="880" height="553" loading="lazy" decoding="async">
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section case-block">
+      <h2 class="section__title">How it works</h2>
+      <p class="case-lead">An owner-scoped Firestore data model with security rules that lock every read and write to the signed-in owner. Real-time listeners stream data into the UI; a pure, unit-tested domain layer does the math.</p>
+      <div class="flow" role="img" aria-label="Flow: owner sign-in, owner-scoped Firestore subcollections, security rules, real-time onSnapshot listeners, Zustand state, a pure domain layer, and the live UI.">
+        <span class="flow__step">Owner sign-in</span>
+        <span class="flow__step">Owner-scoped Firestore</span>
+        <span class="flow__step flow__step--alert">Security rules</span>
+        <span class="flow__step">Real-time listeners</span>
+        <span class="flow__step">Zustand state</span>
+        <span class="flow__step">Pure domain layer</span>
+      </div>
+      <div class="layer-grid">
+        <div class="layer glass"><span class="layer__k">Client</span><span class="layer__v">React Native + Expo (SDK&nbsp;56), TypeScript, Expo Router. NativeWind v4 (Tailwind for RN); responsive desktop-table &harr; mobile-card layouts with a light/dark theme.</span></div>
+        <div class="layer glass"><span class="layer__k">Data model</span><span class="layer__v">Owner-scoped Firestore — <code>users/{uid}/…</code> subcollections for rooms, tenants, dues, staff, and more. Security rules lock every read/write to the signed-in owner.</span></div>
+        <div class="layer glass"><span class="layer__k">Real-time</span><span class="layer__v"><code>onSnapshot</code> listeners wrapped in custom hooks stream live data into Zustand state, so the dashboard is always current.</span></div>
+        <div class="layer glass"><span class="layer__k">Domain</span><span class="layer__v">A pure, unit-tested layer computes occupancy, dues, and payroll. Money is stored as integer paise; dues use deterministic IDs (<code>tenantId_monthKey</code>) for idempotency.</span></div>
+        <div class="layer glass"><span class="layer__k">Media</span><span class="layer__v">KYC scans are compressed in-app (expo-image-manipulator) and stored as base64 in a per-tenant <code>documents</code> subcollection.</span></div>
+        <div class="layer glass"><span class="layer__k">Build &amp; deploy</span><span class="layer__v">44 Jest unit tests; the Expo web build deploys to Firebase Hosting — live and signed-in-ready.</span></div>
+      </div>
+    </section>
+
+    <!-- Outcome -->
+    <section class="section case-block">
+      <h2 class="section__title">Outcome</h2>
+      <p class="case-lead">One real-time, cross-platform codebase runs an entire PG business &mdash; seven modules from rent to payroll to maintenance &mdash; on a hardened, owner-scoped Firestore backend. Not a single-feature CRUD demo: a working product you can sign into today.</p>
+      <p class="case-note">Built solo, with AI pair-programming assistance.</p>
+      <div class="case-hero__actions">
+        <a class="btn btn--primary" href="https://staytrack-ca1ac.web.app" target="_blank" rel="noopener">Open live app &rarr;</a>
+        <a class="btn btn--ghost" href="index.html#projects">Back to projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year">2026</span> Adith Senthil Kumar</p>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="gallery.js" defer></script>
+  <script src="reel.js" defer></script>
+</body>
+</html>

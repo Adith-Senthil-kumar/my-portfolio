@@ -859,6 +859,30 @@ body.case {
 .shot__img--light { position: absolute; top: 0; left: 0; height: 100%; object-fit: cover; opacity: 0; }
 .shots[data-theme="light"] .shot__img--dark { opacity: 0; }
 .shots[data-theme="light"] .shot__img--light { opacity: 1; }
+
+/* Web (desktop / landscape) shots — a subtle browser-window frame */
+.shot--web {
+  flex: 1 1 340px;
+  max-width: 520px;
+  padding: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--glass-strong);
+  display: flex;
+  flex-direction: column;
+}
+.shot--web::before {
+  content: "";
+  height: 26px;
+  flex: none;
+  border-bottom: 1px solid var(--stroke);
+  background:
+    radial-gradient(circle 3.5px at 16px 13px, #ff5f57 96%, transparent),
+    radial-gradient(circle 3.5px at 30px 13px, #febc2e 96%, transparent),
+    radial-gradient(circle 3.5px at 44px 13px, #28c840 96%, transparent),
+    rgba(255, 255, 255, 0.04);
+}
+.shot--web .shot__media { border-radius: 0; }
 .shot:hover {
   transform: translateY(-6px);
   border-color: var(--stroke-strong);
@@ -914,7 +938,7 @@ body.case {
   padding: clamp(16px, 4vw, 40px);
 }
 .lightbox__img {
-  max-width: min(92vw, 460px);
+  max-width: min(94vw, 980px);
   max-height: 80vh;
   width: auto;
   height: auto;
@@ -1015,10 +1039,10 @@ body.case {
 }
 .reel--portrait { aspect-ratio: 9 / 16; max-width: 380px; margin-inline: auto; }
 .reel__video { display: block; width: 100%; height: 100%; object-fit: cover; }
-.reel__toggle {
+.reel__toggle,
+.reel__mute {
   position: absolute;
   bottom: 16px;
-  right: 16px;
   width: 44px;
   height: 44px;
   display: inline-flex;
@@ -1035,8 +1059,12 @@ body.case {
   cursor: pointer;
   transition: background 0.2s var(--ease), border-color 0.2s var(--ease), transform 0.2s var(--ease);
 }
-.reel__toggle:hover { background: rgba(240, 121, 95, 0.22); border-color: var(--coral); transform: scale(1.06); }
-.reel__toggle:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.reel__toggle { right: 16px; }
+.reel__mute { right: 68px; }
+.reel__toggle:hover,
+.reel__mute:hover { background: rgba(240, 121, 95, 0.22); border-color: var(--coral); transform: scale(1.06); }
+.reel__toggle:focus-visible,
+.reel__mute:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 .reel__caption {
   margin: 14px 0 0;
   font-family: var(--font-mono);
