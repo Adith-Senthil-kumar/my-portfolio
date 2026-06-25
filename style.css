@@ -1065,6 +1065,46 @@ body.case {
 .reel__mute:hover { background: rgba(240, 121, 95, 0.22); border-color: var(--coral); transform: scale(1.06); }
 .reel__toggle:focus-visible,
 .reel__mute:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+/* ---- GitHub showcase (Projects footer) ---- */
+.gh { padding: clamp(22px, 3vw, 30px); margin-top: clamp(22px, 3.5vw, 34px); }
+.gh__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.gh__eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+.gh__title { font-family: var(--font-display); font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.7rem); margin-top: 4px; }
+.gh__cta {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--gold);
+  border: 1px solid rgba(245, 197, 78, 0.4);
+  padding: 9px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.gh__cta:hover { background: rgba(245, 197, 78, 0.12); border-color: var(--gold); }
+.gh__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 12px; }
+.gh__repo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 18px;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.03);
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), background 0.25s var(--ease);
+}
+.gh__repo:hover { transform: translateY(-3px); border-color: var(--stroke-strong); background: rgba(255, 255, 255, 0.06); }
+.gh__repo-name { font-family: var(--font-mono); font-weight: 500; font-size: 0.95rem; color: var(--ink); word-break: break-word; }
+.gh__repo-desc { color: var(--ink-soft); font-size: 0.85rem; line-height: 1.5; flex: 1; }
+.gh__repo-lang { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-dim); }
+.gh__dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
 .reel__caption {
   margin: 14px 0 0;
   font-family: var(--font-mono);
