@@ -28,31 +28,19 @@ A hand-built personal portfolio — static **HTML / CSS / vanilla JS**, no build
 
 ## ✨ Featured builds
 
-<table>
-<tr>
-<td width="33%" valign="top" align="center">
-<a href="https://adith-senthil-kumar.github.io/my-portfolio/staytrack.html"><img src="media/staytrack-reel-poster.webp" width="100%"></a>
-<h3>StayTrack</h3>
-Run an entire PG / hostel from one real-time app — seven modules on an owner-scoped Firestore backend.
-<br><br>
-<a href="https://adith-senthil-kumar.github.io/my-portfolio/staytrack.html"><b>Deep dive</b></a> · <a href="https://staytrack-ca1ac.web.app"><b>Live demo ↗</b></a>
-</td>
-<td width="33%" valign="top" align="center">
-<a href="https://adith-senthil-kumar.github.io/my-portfolio/gymos.html"><img src="media/gymos-card.webp" width="100%"></a>
-<h3>GymOS</h3>
-Offline-first workout &amp; nutrition tracker — no account, no cloud. On-device SQLite via Drizzle.
-<br><br>
-<a href="https://adith-senthil-kumar.github.io/my-portfolio/gymos.html"><b>Deep dive</b></a>
-</td>
-<td width="33%" valign="top" align="center">
-<a href="https://adith-senthil-kumar.github.io/my-portfolio/busbuddy.html"><img src="media/busbuddy-reel-poster.webp" width="100%"></a>
-<h3>BusBuddy</h3>
-One login → three role apps (admin, parent, driver) over a shared Firebase backend with live GPS.
-<br><br>
-<a href="https://adith-senthil-kumar.github.io/my-portfolio/busbuddy.html"><b>Deep dive</b></a>
-</td>
-</tr>
-</table>
+<p align="center">
+  <a href="https://adith-senthil-kumar.github.io/my-portfolio/staytrack.html"><img src="screenshots/staytrack/rooms.webp" height="230" alt="StayTrack — Rooms & Occupancy dashboard"></a>
+  &nbsp;
+  <a href="https://adith-senthil-kumar.github.io/my-portfolio/gymos.html"><img src="screenshots/gymos/home.webp" height="230" alt="GymOS — home dashboard"></a>
+  &nbsp;
+  <a href="https://adith-senthil-kumar.github.io/my-portfolio/busbuddy.html"><img src="screenshots/busbuddy/parent-home.webp" height="230" alt="BusBuddy — parent live status"></a>
+</p>
+
+**StayTrack** — run an entire PG / hostel from one real-time app: seven modules on an owner-scoped Firestore backend.<br>[Deep dive →](https://adith-senthil-kumar.github.io/my-portfolio/staytrack.html) · [Live demo ↗](https://staytrack-ca1ac.web.app) · [Source ↗](https://github.com/Adith-Senthil-kumar/staytrack)
+
+**GymOS** — offline-first workout &amp; nutrition tracker, no account or cloud; on-device SQLite via Drizzle.<br>[Deep dive →](https://adith-senthil-kumar.github.io/my-portfolio/gymos.html) · [Source ↗](https://github.com/Adith-Senthil-kumar/gymos)
+
+**BusBuddy** — one login fans out into three role apps (admin, parent, driver) over a shared Firebase backend with live GPS.<br>[Deep dive →](https://adith-senthil-kumar.github.io/my-portfolio/busbuddy.html) · [Source ↗](https://github.com/Adith-Senthil-kumar/Bus_management_app)
 
 ## 📄 Published research
 
@@ -64,13 +52,13 @@ One login → three role apps (admin, parent, driver) over a shared Firebase bac
 ## 📸 A peek inside
 
 <p align="center">
-  <img src="screenshots/gymos/home-thumb.webp" width="22%">
-  &nbsp;
-  <img src="screenshots/busbuddy/parent-home-thumb.webp" width="22%">
+  <img src="screenshots/busbuddy/admin-tracking-thumb.webp" width="22%">
   &nbsp;
   <img src="screenshots/gymos/muscle-volume-thumb.webp" width="22%">
   &nbsp;
-  <img src="screenshots/busbuddy/admin-tracking-thumb.webp" width="22%">
+  <img src="screenshots/gymos/active-workout-thumb.webp" width="22%">
+  &nbsp;
+  <img src="screenshots/busbuddy/driver-scan-thumb.webp" width="22%">
 </p>
 <p align="center"><i>Every project ships a light/dark screenshot gallery and a promo reel — tap any screen on the live site to open the lightbox.</i></p>
 
