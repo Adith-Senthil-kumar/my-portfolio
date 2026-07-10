@@ -15,3 +15,6 @@ promo/
 # New reel sources + StayTrack raw screenshots (kept local)
 /video/
 /staytrack/
+
+# Local resume source (re-render via headless Chrome print-to-pdf)
+.resume-src.html
