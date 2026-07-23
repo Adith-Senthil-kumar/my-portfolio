@@ -18,3 +18,4 @@ promo/
 
 # Local resume source (re-render via headless Chrome print-to-pdf)
 .resume-src.html
+RESUME_REFERENCE.md
