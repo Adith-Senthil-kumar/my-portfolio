@@ -1148,3 +1148,7 @@ body.case {
 .theme-toggle__btn:hover { color: var(--ink); }
 .theme-toggle__btn.is-active { background: var(--accent); color: #2a1400; }
 .theme-toggle__btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+/* Text-only skill chips (tools without an icon in icons/) */
+.chip--text { justify-content: center; min-height: 90px; }
+.chip--text span { font-size: 0.8rem; color: var(--ink); line-height: 1.35; }
