@@ -42,6 +42,8 @@ A hand-built personal portfolio — static **HTML / CSS / vanilla JS**, no build
 
 **BusBuddy** — one login fans out into three role apps (admin, parent, driver) over a shared Firebase backend with live GPS.<br>[Deep dive →](https://adith-senthil-kumar.github.io/my-portfolio/busbuddy.html) · [Source ↗](https://github.com/Adith-Senthil-kumar/Bus_management_app)
 
+**Quillix** — a GST-compliance platform in production use at a chartered-accountancy firm: bill OCR with confidence-gated model escalation, GST returns, Tally export, rules-enforced multi-tenant security. Two-person team; private repository.<br>[Deep dive →](https://adith-senthil-kumar.github.io/my-portfolio/quillix.html)
+
 ## 📄 Published research
 
 - **SmartHealthLink** — a family-centric health monitor with an AI stacked-ensemble model for hereditary-risk prediction (90.2% accuracy). *IEEE I3CTCON 2026.*

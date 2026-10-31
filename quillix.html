@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quillix — Deep Dive | Adith Senthil Kumar</title>
+  <meta name="description" content="Deep dive: Quillix — a GST-compliance and bookkeeping platform for Indian chartered-accountancy firms, in production use. Bill OCR with confidence-gated model escalation, GSTR-1/3B and 2A/2B reconciliation, Tally export, and rules-enforced multi-tenant security. React, Firebase, Gemini.">
+  <meta name="theme-color" content="#0d0a1f">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Quillix — Deep Dive">
+  <meta property="og:description" content="A production GST-compliance platform for audit firms: AI bill OCR with a measured eval harness, GST returns, Tally export, and tenant-safe security. React · Firebase · Gemini.">
+  <meta property="og:url" content="https://adith-senthil-kumar.github.io/my-portfolio/quillix.html">
+  <meta property="og:image" content="https://adith-senthil-kumar.github.io/my-portfolio/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://adith-senthil-kumar.github.io/my-portfolio/og.png">
+  <link rel="canonical" href="https://adith-senthil-kumar.github.io/my-portfolio/quillix.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0a1f'/><circle cx='16' cy='17' r='8' fill='%23f5c54e'/><rect y='22' width='32' height='10' fill='%230d0a1f'/><rect x='4' y='22' width='24' height='2' fill='%23f0795f'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="case">
+  <a class="skip-link" href="#case-main">Skip to content</a>
+
+  <header class="case-nav">
+    <div class="case-nav__inner">
+      <a class="case-nav__back" href="index.html#projects">&larr; Back to portfolio</a>
+      <span class="pub__badge">In production</span>
+    </div>
+  </header>
+
+  <main id="case-main">
+    <!-- Hero -->
+    <section class="section case-hero">
+      <p class="eyebrow">Deep dive &middot; Team project</p>
+      <h1 class="case-hero__title">Quillix</h1>
+      <p class="case-hero__sub">A GST-compliance and bookkeeping platform for Indian chartered-accountancy firms &mdash; it turns scanned bills, Excel registers and a client&rsquo;s Tally chart into GST filings and Tally vouchers, for many clients under one firm login.</p>
+      <ul class="case-meta">
+        <li>2-person team &middot; lead developer</li>
+        <li>React &middot; Firebase &middot; Gemini</li>
+        <li>Web, in production use</li>
+      </ul>
+      <div class="case-hero__actions">
+        <a class="btn btn--primary" href="#how-it-works">How it works &darr;</a>
+        <a class="btn btn--ghost" href="index.html#projects">Back to projects</a>
+      </div>
+      <ul class="tags case-hero__tags">
+        <li>React</li><li>Vite</li><li>Firebase</li><li>Cloud Firestore</li><li>Cloud Functions</li><li>Gemini API</li><li>Vertex AI</li><li>Vitest</li>
+      </ul>
+    </section>
+
+    <!-- Stat strip -->
+    <section class="section case-block">
+      <div class="metrics">
+        <div class="metric glass"><span class="metric__num">4,900+</span><span class="metric__label">Automated tests</span></div>
+        <div class="metric glass"><span class="metric__num">54</span><span class="metric__label">Cloud Functions</span></div>
+        <div class="metric glass"><span class="metric__num">49</span><span class="metric__label">App screens</span></div>
+        <div class="metric glass"><span class="metric__num">99.4%</span><span class="metric__label">Purchase-OCR accuracy (synthetic eval set)</span></div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section case-block">
+      <h2 class="section__title">The problem</h2>
+      <p class="case-lead">Indian small businesses file GST returns every month, and in practice their chartered accountant does it &mdash; and a wrong return is the accountant&rsquo;s name on the line. Quillix sits between a client&rsquo;s day-to-day billing and the two systems that must both be satisfied: the <strong>GST portal</strong> and <strong>Tally</strong>, where the books live.</p>
+      <ul class="case-list">
+        <li>Purchase bills arrive as <strong>scans of varying quality</strong> and are re-typed line by line &mdash; HSN codes, per-line GST rate, GSTINs.</li>
+        <li>Books are reconciled against the portal&rsquo;s <strong>GSTR-2A/2B by eye</strong>, so a missing supplier invoice only shows up when input credit stops adding up.</li>
+        <li>Moving data into Tally is a <strong>manual export/import round-trip</strong>; Tally rejects unbalanced vouchers and unknown ledgers.</li>
+        <li>A firm runs <strong>dozens of clients at once</strong>, so every client&rsquo;s data has to stay isolated and every role limited to what it should see.</li>
+      </ul>
+    </section>
+
+    <!-- Solution -->
+    <section class="section case-block">
+      <h2 class="section__title">What I built</h2>
+      <p class="case-lead">One workspace for a whole practice: a firm-level cockpit across all clients, and a full bookkeeping-to-filing workflow inside each one.</p>
+      <div class="feature-grid">
+        <div class="feature glass"><h3>Firm cockpit</h3><p>An exception-first dashboard: a ranked worklist of what needs attention &mdash; unfiled returns, unbilled clients, unusable GSTINs, unreconciled records &mdash; over a roster of every client.</p></div>
+        <div class="feature glass"><h3>Sales, purchases &amp; ITC</h3><p>Per-line GST with intra/inter-state detection from GSTIN state codes, credit and debit notes, recurring invoices, and input-tax-credit classification per line.</p></div>
+        <div class="feature glass"><h3>Bill OCR</h3><p>Upload up to ten bills; a background job extracts header fields, line items and per-rate summaries into a side-by-side review screen with confidence flags.</p></div>
+        <div class="feature glass"><h3>GST returns</h3><p>GSTR-1 tables with portal-format JSON export and a filed-period lock, GSTR-3B computation, and GSTR-2A/2B reconciliation against the books.</p></div>
+        <div class="feature glass"><h3>Tally export</h3><p>Voucher export with bottom-up balancing, master ledgers ensured first, and batched sends; a Windows shell adds a live bridge to TallyPrime on the same machine.</p></div>
+        <div class="feature glass"><h3>Notice Reply</h3><p>Upload a GST or income-tax notice and get a summary and a response plan &mdash; with the client&rsquo;s figures filled in on the device, never sent to the model.</p></div>
+        <div class="feature glass"><h3>Firms, roles &amp; audit</h3><p>Partner, manager and associate roles with per-client access, an approval workflow for edits and deletes, and a server-written audit trail clients cannot forge.</p></div>
+        <div class="feature glass"><h3>Built for the user</h3><p>In-app help and guided tours in English and Tamil, a dark mode, a command palette, and a separate operator console for running the platform.</p></div>
+      </div>
+    </section>
+
+    <!-- My role -->
+    <section class="section case-block">
+      <h2 class="section__title">My role</h2>
+      <p class="case-lead">Quillix is a two-person project, built with AI coding assistants under our direction. I was the lead developer.</p>
+      <ul class="case-list">
+        <li>I owned the <strong>backend and architecture</strong>: Cloud Functions, the Firestore data model and security rules, and the server-kept derived data.</li>
+        <li>I built the <strong>OCR pipeline and its eval harness</strong>, the Notice Reply flow, and the two-step sign-in system.</li>
+        <li>I wrote most of the <strong>test suite and CI gates</strong>, and drove the large behaviour-preserving refactors (ES-module migration, per-document data model, splitting a 5,000-line functions file by domain).</li>
+        <li>My collaborator focused on <strong>UI features</strong>, early product work and the marketing site.</li>
+      </ul>
+    </section>
+
+    <!-- How it works -->
+    <section class="section case-block" id="how-it-works">
+      <h2 class="section__title">How it works</h2>
+      <p class="case-lead">The browser talks to Firestore directly, and <strong>security rules are the real authority</strong>. Heavy lifting happens on the server in triggers and schedulers, which keep derived documents so pages never have to read a client&rsquo;s whole book.</p>
+      <div class="flow" role="img" aria-label="Flow: sign-in with a second factor, role and firm lookup, direct Firestore access checked by security rules, server triggers writing audit trail and derived documents, schedulers recomputing from source, and pages reading the derived documents.">
+        <span class="flow__step">Sign-in + 2nd factor</span>
+        <span class="flow__step">Firm &amp; role</span>
+        <span class="flow__step flow__step--alert">Security rules</span>
+        <span class="flow__step">Per-record writes</span>
+        <span class="flow__step">Server triggers</span>
+        <span class="flow__step">Derived documents</span>
+        <span class="flow__step">Fast pages</span>
+      </div>
+      <div class="layer-grid">
+        <div class="layer glass"><span class="layer__k">Client</span><span class="layer__v">React 18 and Vite, with hand-written CSS and a lazy-loaded page per route. A persistent, multi-tab Firestore cache keeps it usable on a flaky connection.</span></div>
+        <div class="layer glass"><span class="layer__k">Data model</span><span class="layer__v">Everything is per-document under <code>firms/{firm}/stores/{client}</code>. A sale is one document per invoice, with the lines inside it. A migration off single large documents removed Firestore&rsquo;s 1&nbsp;MB document ceiling and write contention.</span></div>
+        <div class="layer glass"><span class="layer__k">Security</span><span class="layer__v">Firestore and Storage rules enforce firm and client scoping and role limits; privilege-escalation guards stop a user creating or promoting people outside their remit. Rules are tested against the emulator, and the client is never trusted.</span></div>
+        <div class="layer glass"><span class="layer__k">Backend</span><span class="layer__v">Cloud Functions (Node&nbsp;22): callables for OCR, lookups, encryption and email, Firestore triggers for the audit trail and integrity flags, and schedulers for recomputation and backups.</span></div>
+        <div class="layer glass"><span class="layer__k">Derived data</span><span class="layer__v">Monthly summaries, receivables and payables, and stock levels are kept by the server and <strong>recomputed from the documents &mdash; never from running totals</strong>, so a missed trigger heals itself. The dashboard no longer reads the book at all.</span></div>
+        <div class="layer glass"><span class="layer__k">Integrations</span><span class="layer__v">Gemini and Vertex AI, GSTIN lookup and filing-status services, transactional email, and TallyPrime over a local bridge.</span></div>
+      </div>
+    </section>
+
+    <!-- AI -->
+    <section class="section case-block">
+      <h2 class="section__title">The AI layer</h2>
+      <p class="case-lead">Three independent, single-shot model calls &mdash; <strong>deliberately not an agent</strong>. Each one is a structured request with a clear job and a clear failure mode.</p>
+      <div class="flow" role="img" aria-label="Flow: bill upload, duplicate check by content hash, cheap model reads the bill with per-field confidence, escalate to a second model if a critical field is low, human review, reviewed result cached.">
+        <span class="flow__step">Bill upload</span>
+        <span class="flow__step">Duplicate check (hash)</span>
+        <span class="flow__step flow__step--ai">Cheap model read</span>
+        <span class="flow__step flow__step--alert">Low confidence? &rarr; 2nd model</span>
+        <span class="flow__step">Human review</span>
+        <span class="flow__step">Reviewed result cached</span>
+      </div>
+      <div class="layer-grid">
+        <div class="layer glass"><span class="layer__k">Bill OCR</span><span class="layer__v">Every bill goes to a cheap Gemini model first, which also rates its own confidence per field. Only when a critical field &mdash; a GSTIN, an invoice number, a total or a tax amount &mdash; falls below a confidence floor does a second model read it again. Results stream into the review screen as they arrive.</span></div>
+        <div class="layer glass"><span class="layer__k">Cost control</span><span class="layer__v">Per-user daily limits, a cap on files per call, and a duplicate cache keyed on the file&rsquo;s content hash. The cache stores the <em>reviewed</em> result, so re-uploading a corrected bill costs no tokens and restores the correction.</span></div>
+        <div class="layer glass"><span class="layer__k">Notice Reply</span><span class="layer__v">One call returns a summary and a response plan. The model receives only the notice and a catalogue of field <em>names</em>; it returns references that the app resolves to the client&rsquo;s real figures <strong>on the device</strong>, so no client financial data reaches the model.</span></div>
+        <div class="layer glass"><span class="layer__k">HSN suggestion</span><span class="layer__v">A single low-temperature call that suggests an HSN/SAC code from an item description and flags a mismatch between the name and the code.</span></div>
+      </div>
+    </section>
+
+    <!-- Eval -->
+    <section class="section case-block">
+      <h2 class="section__title">Measuring the OCR</h2>
+      <p class="case-lead">I built an eval harness that generates bills whose correct answers are known by construction, renders each as a clean PDF and as a scanned copy, and <strong>slices the prompt straight out of the deployed function</strong> so the test cannot drift from what ships.</p>
+      <ul class="case-list">
+        <li><strong>Result:</strong> raising the image resolution lifted purchase-bill accuracy from 97.1% to 99.4%, and sales-bill accuracy from 96.2% to 98.2%, on scanned PDFs.</li>
+        <li><strong>Measured and kept or rejected:</strong> removing the zero-temperature setting cost 2.6 points, so it stays; a lower thinking level truncated the JSON output on three of seven bills, so it was rejected.</li>
+        <li><strong>Wiring check:</strong> an end-to-end script reads token counts back from the deployed function, proving the setting actually shipped.</li>
+        <li><strong>The honest limit:</strong> the set is seven clean, machine-generated bills. It shows the method works and that the change helped; it is <em>not</em> a claim about accuracy on real-world bills, which I have not yet measured.</li>
+      </ul>
+    </section>
+
+    <!-- Security -->
+    <section class="section case-block">
+      <h2 class="section__title">Two-step sign-in</h2>
+      <p class="case-lead">Added without a way to lock a firm out: the design <strong>fails open on unknown state and enforces on the server</strong> &mdash; the client gate is only a convenience.</p>
+      <ul class="case-list">
+        <li><strong>Per-firm switch</strong> with a grace period before it becomes mandatory, using authenticator-app codes.</li>
+        <li><strong>Enforced where it counts:</strong> built into the Firestore role checks and into the callable functions, not just the sign-in screen.</li>
+        <li><strong>Recovery</strong> through single-use, hashed recovery codes; a partner can reset a colleague only after re-entering their own password; every new authenticator is logged and emailed to its owner.</li>
+        <li><strong>Proven</strong> against the emulators and a live development project with real tokens before it touched production.</li>
+      </ul>
+    </section>
+
+    <!-- Engineering -->
+    <section class="section case-block">
+      <h2 class="section__title">Engineering decisions</h2>
+      <ul class="case-list">
+        <li><strong>Reconcile and flag, never silently fix.</strong> When a GST figure disagrees with its parts, the system raises a visible, reversible flag instead of quietly correcting a number that goes into a return.</li>
+        <li><strong>Two audit trails on purpose.</strong> A client-written log can be tampered with; a server-written one cannot. Every write also carries its author, guarded against framing a colleague.</li>
+        <li><strong>Derive at read for discounts.</strong> A trade discount reduces the taxable value, so documents keep gross figures and every consumer nets them at read time &mdash; because the netting steps are not all idempotent, and applying one twice would understate a return.</li>
+        <li><strong>A lesson from one shared component.</strong> A change to a shared GST-rate picker once emptied nine dropdowns while the build, lint and its own test all passed. Tests now mount the real pages that consume a shared component.</li>
+        <li><strong>Safe deploys.</strong> Hosting ships only through CI, and a hook refuses any build wired to the wrong project; functions deploy by name, one at a time.</li>
+      </ul>
+    </section>
+
+    <!-- Quality -->
+    <section class="section case-block">
+      <h2 class="section__title">Quality</h2>
+      <p class="case-lead">Over <strong>4,900 automated tests</strong> pass today, alongside several hundred emulator-backed security-rules tests.</p>
+      <div class="layer-grid">
+        <div class="layer glass"><span class="layer__k">Cross-surface tests</span><span class="layer__v">One invoice is pushed through Tally export, GSTR-1, the ledger and the PDF, and every surface must report the same figure &mdash; the tests assert the surfaces against each other, not against my own arithmetic.</span></div>
+        <div class="layer glass"><span class="layer__k">Rules tests</span><span class="layer__v">Firestore and Storage rules are exercised on the emulator, including the role matrix and the two-step enforcement.</span></div>
+        <div class="layer glass"><span class="layer__k">Real-shell tests</span><span class="layer__v">Several tests boot the actual app shell signed in as a chosen role, which caught a route that a unit test had missed.</span></div>
+        <div class="layer glass"><span class="layer__k">CI gates</span><span class="layer__v">Rules tests, a lint ratchet, type-checking, unit tests, a build, and per-chunk bundle-size budgets all gate every deploy, along with a guard that fails the build if a credential file is ever tracked.</span></div>
+      </div>
+    </section>
+
+    <!-- Outcome -->
+    <section class="section case-block">
+      <h2 class="section__title">Outcome</h2>
+      <p class="case-lead">Quillix is live and in use at a chartered-accountancy firm, covering the cycle from bill capture through GST return preparation to Tally export &mdash; with server-enforced access control, a tamper-resistant audit trail, and a measured approach to its AI components.</p>
+      <p class="case-note">Being straight about scope: it is in use at one firm and has not been load-tested; the OCR figures above are from a synthetic evaluation set; billing is built but switched off; and the Windows desktop shell is not yet distributed. The source repository is private, and I never name the firm.</p>
+      <div class="case-hero__actions">
+        <a class="btn btn--ghost" href="index.html#projects">Back to projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year">2026</span> Adith Senthil Kumar</p>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
